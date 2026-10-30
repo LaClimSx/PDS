@@ -11,13 +11,30 @@ config_version=5
 [application]
 
 config/name="PDS"
+run/main_scene="uid://de2w83gncyih3"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+run/max_fps=240
+config/icon="res://assets/icon.svg"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=1
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "yellow",
+"res://scenes/": "green",
+"res://scripts/": "orange"
+}
 
 [physics]
 

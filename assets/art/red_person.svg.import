@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x6h3p8ppbb2l"
-path="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+uid="uid://bg36pmcpba8gg"
+path="res://.godot/imported/red_person.svg-3803810e352aa610f0d0f037c8fcca38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"]
+source_file="res://assets/art/red_person.svg"
+dest_files=["res://.godot/imported/red_person.svg-3803810e352aa610f0d0f037c8fcca38.ctex"]
 
 [params]
 
