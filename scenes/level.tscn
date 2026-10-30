@@ -58,6 +58,14 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
+[node name="LiarLabel" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=1720406180]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 48
+text = "Find the X liar"
+horizontal_alignment = 1
+
 [node name="GridContainer" type="GridContainer" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=1456320327]
 unique_name_in_owner = true
 layout_mode = 2
@@ -112,3 +120,4 @@ text = "Hint"
 icon = ExtResource("3_w8frs")
 
 [connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/ValidateButton" to="." method="_on_validate_button_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/MarginContainer2/PanelContainer/HintButton" to="." method="_on_hint_button_pressed"]

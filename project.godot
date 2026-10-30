@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 run/max_fps=240
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+Global="*uid://b7du5yi2h4u24"
+
 [debug]
 
 gdscript/warnings/untyped_declaration=1
