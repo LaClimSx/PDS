@@ -17,9 +17,6 @@ bg_color = Color(1, 1, 1, 1)
 border_width_bottom = 4
 border_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ieukf"]
-bg_color = Color(0.16924527, 0.16924533, 0.16924518, 1)
-
 [node name="Person" type="PanelContainer" unique_id=1970352386]
 custom_minimum_size = Vector2(300, 300)
 offset_right = 40.0
@@ -35,19 +32,25 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h4n5y")
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/Control" unique_id=1991069750]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 texture = ExtResource("2_jf287")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Control" unique_id=362885620]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Control" unique_id=562691439]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Control/MarginContainer" unique_id=362885620]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme_override_styles/panel = SubResource("StyleBoxFlat_ieukf")
 
-[node name="MarkerButton" parent="VBoxContainer/Control/PanelContainer" unique_id=1708873835 instance=ExtResource("3_jf287")]
+[node name="MarkerButton" parent="VBoxContainer/Control/MarginContainer/PanelContainer" unique_id=1708873835 instance=ExtResource("3_jf287")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

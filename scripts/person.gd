@@ -12,8 +12,8 @@ enum ColorGroup {
 @export var is_liar: bool = false
 @export var text : String
 
-@onready var texture_rect : TextureRect = $VBoxContainer/Control/TextureRect
-@onready var marker_button : MarkerButton = $VBoxContainer/Control/PanelContainer/MarkerButton
+@onready var texture_rect : TextureRect = %TextureRect
+@onready var marker_button : MarkerButton = %MarkerButton
 
 @onready var red_texture : CompressedTexture2D = preload("res://assets/art/red_person.svg")
 @onready var green_texture : CompressedTexture2D = preload("res://assets/art/green_person.svg")
