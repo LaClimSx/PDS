@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bdawknq2u17ds"]
+
+[ext_resource type="Texture2D" uid="uid://buu2wmic8hq26" path="res://assets/innocent.png" id="1_dqwud"]
+[ext_resource type="Texture2D" uid="uid://bk8mwa517oxo" path="res://assets/RedCard.png" id="1_yiag5"]
+[ext_resource type="Texture2D" uid="uid://bf0glw1n3hcbw" path="res://assets/noInfo.png" id="2_5273u"]
+[ext_resource type="Texture2D" uid="uid://dawpner8wcv8l" path="res://assets/liar.png" id="2_hddve"]
+[ext_resource type="Script" uid="uid://es3q8g5dfvev" path="res://scripts/marker_button.gd" id="2_tgmmg"]
+[ext_resource type="Texture2D" uid="uid://bn57hso8gxbii" path="res://assets/starInfo.png" id="3_qbjcq"]
+[ext_resource type="Texture2D" uid="uid://3scaw7w1bv1q" path="res://assets/triangleInfo.png" id="4_dqwud"]
+[ext_resource type="Texture2D" uid="uid://dviruxu4g6at" path="res://assets/circleInfo4.png" id="5_hddve"]
+
+[node name="Card" type="Panel" unique_id=589397018]
+custom_minimum_size = Vector2(225, 350)
+custom_maximum_size = Vector2(225, 350)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1876075204]
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 50.0
+grow_horizontal = 0
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer" unique_id=378161960]
+custom_minimum_size = Vector2(30, 50)
+custom_maximum_size = Vector2(30, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("1_dqwud")
+texture_pressed = ExtResource("2_hddve")
+stretch_mode = 0
+
+[node name="MarkerButton" type="TextureButton" parent="HBoxContainer" unique_id=1182655041]
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("2_tgmmg")
+cross_texture = ExtResource("2_5273u")
+square_texture = ExtResource("3_qbjcq")
+triangle_texture = ExtResource("4_dqwud")
+circle_texture = ExtResource("5_hddve")
+metadata/_custom_type_script = "uid://es3q8g5dfvev"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1183995484]
+layout_mode = 0
+offset_right = 2242.0
+offset_bottom = 3510.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_yiag5")
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=455889585]
+custom_minimum_size = Vector2(470, 50)
+custom_maximum_size = Vector2(470, 80)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1870.0
+offset_right = 235.0
+offset_bottom = -731.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(4.4856825, 9.092132)
+text = "Lorem ipsum dolor sit amet. Aut reiciendis sapiente rem nostrum adipisci est nihil minus aut omnis magni rem nemo officia ex quam consequatur qui assumenda veritatis. Est suscipit deleniti eum maiores aliquid in asperiores aliquam et galisum sunt quo doloremque enim qui quam nesciunt. 33 odit odit rem dolorem aliquam et explicabo odio a dolore quisquam sit eligendi ipsum ad dolor rerum eum enim fugit. In quia Quis et quae fugiat sit voluptate voluptas."
+autowrap_mode = 3

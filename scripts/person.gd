@@ -15,16 +15,16 @@ enum ColorGroup {
 @onready var texture_rect : TextureRect = %TextureRect
 @onready var marker_button : MarkerButton = %MarkerButton
 
-@onready var red_texture : CompressedTexture2D = preload("res://assets/art/red_person.svg")
-@onready var green_texture : CompressedTexture2D = preload("res://assets/art/green_person.svg")
-@onready var blue_texture : CompressedTexture2D = preload("res://assets/art/blue_person.svg")
+@onready var red_texture : CompressedTexture2D = preload("res://assets/RedCard.png")
+@onready var yellow_texture : CompressedTexture2D = preload("res://assets/YellowCard.png")
+@onready var blue_texture : CompressedTexture2D = preload("res://assets/BlueCard.png")
 
 func init_person() -> void:
 	match color:
 		ColorGroup.RED:
 			texture_rect.texture = red_texture
 		ColorGroup.GREEN:
-			texture_rect.texture = green_texture
+			texture_rect.texture = yellow_texture
 		ColorGroup.BLUE:
 			texture_rect.texture = blue_texture
 	$VBoxContainer/Label.text = text
