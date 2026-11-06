@@ -1,69 +1,85 @@
 [gd_scene format=3 uid="uid://b2qmulxjiaky"]
 
 [ext_resource type="Script" uid="uid://qrvqgpqu80p0" path="res://scripts/person.gd" id="1_5dovg"]
-[ext_resource type="Texture2D" uid="uid://bk8mwa517oxo" path="res://assets/RedCard.png" id="2_jf287"]
+[ext_resource type="Texture2D" uid="uid://buu2wmic8hq26" path="res://assets/art/cards/innocent.png" id="2_526uv"]
+[ext_resource type="Texture2D" uid="uid://bk8mwa517oxo" path="res://assets/art/cards/redCard.png" id="2_jf287"]
 [ext_resource type="PackedScene" uid="uid://c7s1h5dbmakdf" path="res://scenes/marker_button.tscn" id="3_jf287"]
+[ext_resource type="Texture2D" uid="uid://dawpner8wcv8l" path="res://assets/art/cards/liar.png" id="3_yhvuw"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jf287"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wbigs"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4n5y"]
-bg_color = Color(1, 1, 1, 1)
-border_width_bottom = 4
-border_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dnsif"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbigs"]
+bg_color = Color(0, 0, 0, 0.50980395)
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="Person" type="PanelContainer" unique_id=1970352386]
-custom_minimum_size = Vector2(300, 250)
-custom_maximum_size = Vector2(-1, 400)
-offset_right = 300.0
-offset_bottom = 250.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_jf287")
+offset_right = 80.0
+offset_bottom = 288.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wbigs")
 script = ExtResource("1_5dovg")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1994220434]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1700634433]
+custom_maximum_size = Vector2(-1, 280)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dnsif")
 
-[node name="Control" type="PanelContainer" parent="VBoxContainer" unique_id=1230710372]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_h4n5y")
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Control" unique_id=1991069750]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=1864996074]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 180)
-custom_maximum_size = Vector2(-1, 180)
+custom_minimum_size = Vector2(178, 280)
+custom_maximum_size = Vector2(-1, 280)
 layout_mode = 2
+size_flags_vertical = 4
 texture = ExtResource("2_jf287")
-expand_mode = 1
+expand_mode = 5
 stretch_mode = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Control" unique_id=562691439]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer" unique_id=851167160]
 layout_mode = 2
-theme_override_constants/margin_right = 8
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_wbigs")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer" unique_id=996792347]
+custom_minimum_size = Vector2(178, 0)
+layout_mode = 2
+theme_override_constants/margin_top = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Control/MarginContainer" unique_id=362885620]
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/MarginContainer" unique_id=1428168406]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(165, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/line_spacing = 2
+text = "Everyone in this column tells the truth."
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2057150247]
 layout_mode = 2
 size_flags_horizontal = 8
-size_flags_vertical = 8
-
-[node name="MarkerButton" parent="VBoxContainer/Control/MarginContainer/PanelContainer" unique_id=1708873835 instance=ExtResource("3_jf287")]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1154321372]
-custom_minimum_size = Vector2(292, 0)
-layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-text = "Quoicoubeh"
-horizontal_alignment = 1
-autowrap_mode = 3
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer" unique_id=1205844094]
+custom_minimum_size = Vector2(20, 33.3)
+custom_maximum_size = Vector2(20, 33.3)
+layout_mode = 2
+size_flags_horizontal = 0
+toggle_mode = true
+texture_normal = ExtResource("2_526uv")
+texture_pressed = ExtResource("3_yhvuw")
+stretch_mode = 0
+
+[node name="MarkerButton" parent="HBoxContainer" unique_id=1708873835 instance=ExtResource("3_jf287")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1893479768]
+layout_mode = 2
+theme_override_constants/margin_right = 12

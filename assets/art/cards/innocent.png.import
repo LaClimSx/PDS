@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf0glw1n3hcbw"
-path="res://.godot/imported/noInfo.png-adcc49308fe54b366122658b6120adce.ctex"
+uid="uid://buu2wmic8hq26"
+path="res://.godot/imported/innocent.png-a791a21b68a112fafc3d77d2584e8f1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/noInfo.png"
-dest_files=["res://.godot/imported/noInfo.png-adcc49308fe54b366122658b6120adce.ctex"]
+source_file="res://assets/art/cards/innocent.png"
+dest_files=["res://.godot/imported/innocent.png-a791a21b68a112fafc3d77d2584e8f1c.ctex"]
 
 [params]
 

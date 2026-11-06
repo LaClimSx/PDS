@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn57hso8gxbii"
-path="res://.godot/imported/starInfo.png-ef9811545d2990ac5f40308e3c73362d.ctex"
+uid="uid://dawpner8wcv8l"
+path="res://.godot/imported/liar.png-857de231260fb5d344e35ec296b46ef6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/starInfo.png"
-dest_files=["res://.godot/imported/starInfo.png-ef9811545d2990ac5f40308e3c73362d.ctex"]
+source_file="res://assets/art/cards/liar.png"
+dest_files=["res://.godot/imported/liar.png-857de231260fb5d344e35ec296b46ef6.ctex"]
 
 [params]
 

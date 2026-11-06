@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deo10iy7ajac5"
-path="res://.godot/imported/blue_person.svg-52f9994ad0242184ca27407f06acb886.ctex"
+uid="uid://dviruxu4g6at"
+path="res://.godot/imported/redMarker.png-9f4e98ebb90583fcb85a905c65e983d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/blue_person.svg"
-dest_files=["res://.godot/imported/blue_person.svg-52f9994ad0242184ca27407f06acb886.ctex"]
+source_file="res://assets/art/cards/redMarker.png"
+dest_files=["res://.godot/imported/redMarker.png-9f4e98ebb90583fcb85a905c65e983d9.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

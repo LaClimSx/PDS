@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl26p71g8mk8f"
-path="res://.godot/imported/triangle.svg-9c651115fe48f4953c3f07ed18959fd1.ctex"
+uid="uid://bn57hso8gxbii"
+path="res://.godot/imported/yellowMarker.png-8247628cf6118b64dbfe3614b6a59471.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/triangle.svg"
-dest_files=["res://.godot/imported/triangle.svg-9c651115fe48f4953c3f07ed18959fd1.ctex"]
+source_file="res://assets/art/cards/yellowMarker.png"
+dest_files=["res://.godot/imported/yellowMarker.png-8247628cf6118b64dbfe3614b6a59471.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
