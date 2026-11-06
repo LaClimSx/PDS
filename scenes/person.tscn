@@ -60,14 +60,20 @@ horizontal_alignment = 1
 vertical_alignment = 2
 autowrap_mode = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2057150247]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1893479768]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_right = 18
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=2057150247]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_constants/separation = 8
 alignment = 2
 
-[node name="TextureButton" type="TextureButton" parent="HBoxContainer" unique_id=1205844094]
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/HBoxContainer" unique_id=1205844094]
 custom_minimum_size = Vector2(20, 33.3)
 custom_maximum_size = Vector2(20, 33.3)
 layout_mode = 2
@@ -77,10 +83,6 @@ texture_normal = ExtResource("2_526uv")
 texture_pressed = ExtResource("3_yhvuw")
 stretch_mode = 0
 
-[node name="MarkerButton" parent="HBoxContainer" unique_id=1708873835 instance=ExtResource("3_jf287")]
+[node name="MarkerButton" parent="MarginContainer/HBoxContainer" unique_id=1708873835 instance=ExtResource("3_jf287")]
 unique_name_in_owner = true
 layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1893479768]
-layout_mode = 2
-theme_override_constants/margin_right = 12
