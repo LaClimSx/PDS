@@ -10,7 +10,13 @@ var time_passed: float = 0.0
 var stopped: bool = false
 
 func _ready() -> void:
+	$DebugLabel.text = "Debug label: VERSION = " + str(Global.VERSION)
 	%LiarLabel.text = "Find the 1 liar" if liar_number == 1 else "Find the " + str(liar_number) + " liars" 
+	%HintButtonContainer.visible = false
+	%HintButtonContainer.create(Global.VERSION)
+	if Global.VERSION == Global.Version.NO_HELP:
+		%HintButton.visible = false
+		%HintButton.queue_free()
 
 
 func _process(delta: float) -> void:
@@ -38,7 +44,8 @@ func _on_validate_button_pressed() -> void:
 
 
 func _on_hint_button_pressed() -> void:
-	pass
+	%HintButton.visible = false
+	%HintButtonContainer.visible = true
 
 
 static func idx_to_position(idx: int, nb_columns: int) -> String:

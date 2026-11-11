@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://61ln0nj6upql"
-path="res://.godot/imported/GiveUpHover.png-3580b73363cb9568d0de302f967f80e6.ctex"
+path="res://.godot/imported/giveUpHover.png-43f3c735284769c9f69f3bb09437e305.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/GiveUpHover.png"
-dest_files=["res://.godot/imported/GiveUpHover.png-3580b73363cb9568d0de302f967f80e6.ctex"]
+source_file="res://assets/art/giveUpHover.png"
+dest_files=["res://.godot/imported/giveUpHover.png-43f3c735284769c9f69f3bb09437e305.ctex"]
 
 [params]
 

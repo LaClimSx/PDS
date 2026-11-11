@@ -4,16 +4,16 @@
 [ext_resource type="Theme" uid="uid://dswlx0k1a324t" path="res://assets/theme.tres" id="1_mx8sn"]
 [ext_resource type="Script" uid="uid://dpau3lqabweyd" path="res://scripts/level.gd" id="1_w7c3h"]
 [ext_resource type="Texture2D" uid="uid://c2ruxucr3240e" path="res://assets/art/background.png" id="3_ppgk2"]
-[ext_resource type="Texture2D" uid="uid://bv6lku3trcms5" path="res://assets/art/ButtonNormal.png" id="5_klq6b"]
-[ext_resource type="Texture2D" uid="uid://dssho0x4expor" path="res://assets/art/ButtonPressed.png" id="6_b121j"]
-[ext_resource type="Texture2D" uid="uid://bjixojgxdjqou" path="res://assets/art/ButtonHover.png" id="7_8c41q"]
+[ext_resource type="Texture2D" uid="uid://bv6lku3trcms5" path="res://assets/art/hintButtonNormal.png" id="5_klq6b"]
+[ext_resource type="Texture2D" uid="uid://dssho0x4expor" path="res://assets/art/hintButtonPressed.png" id="6_b121j"]
+[ext_resource type="Texture2D" uid="uid://bjixojgxdjqou" path="res://assets/art/hintButtonHover.png" id="7_8c41q"]
+[ext_resource type="Texture2D" uid="uid://m3unhtu7pgcp" path="res://assets/art/giveUpNormal.png" id="8_olg7q"]
+[ext_resource type="PackedScene" uid="uid://c6pytd7782dai" path="res://scenes/hint_button_container.tscn" id="8_t1rx8"]
+[ext_resource type="Texture2D" uid="uid://c1sxvgo1li4jy" path="res://assets/art/giveUpPressed.png" id="9_t1rx8"]
+[ext_resource type="Texture2D" uid="uid://61ln0nj6upql" path="res://assets/art/giveUpHover.png" id="10_8iemx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wbigs"]
 texture = ExtResource("3_ppgk2")
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5x3i2"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fjbxc"]
 
 [node name="Level" type="Control" unique_id=1153732440]
 layout_mode = 3
@@ -46,12 +46,7 @@ theme_override_constants/margin_left = 100
 theme_override_constants/margin_top = 400
 theme_override_constants/margin_bottom = 400
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/MarginContainer" unique_id=1003043316]
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_5x3i2")
-
-[node name="Stopwatch" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer/PanelContainer" unique_id=188592079]
+[node name="Stopwatch" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer" unique_id=188592079]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -112,12 +107,12 @@ theme_override_constants/margin_top = 400
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 400
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/MarginContainer2" unique_id=83800399]
-custom_minimum_size = Vector2(250, 0)
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer2" unique_id=1701171862]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_fjbxc")
+theme_override_constants/separation = 0
+alignment = 1
 
-[node name="HintButton" type="TextureButton" parent="PanelContainer/HBoxContainer/MarginContainer2/PanelContainer" unique_id=872392301]
+[node name="HintButton" type="TextureButton" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=872392301]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(450, 80)
 layout_mode = 2
@@ -126,6 +121,36 @@ size_flags_vertical = 4
 texture_normal = ExtResource("5_klq6b")
 texture_pressed = ExtResource("6_b121j")
 texture_hover = ExtResource("7_8c41q")
+texture_focused = ExtResource("7_8c41q")
+
+[node name="HintButtonContainer" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=159451774 instance=ExtResource("8_t1rx8")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=912778932]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+
+[node name="GiveUpButton" type="TextureButton" parent="PanelContainer/MarginContainer" unique_id=1856128174]
+custom_minimum_size = Vector2(237, 79)
+layout_mode = 2
+texture_normal = ExtResource("8_olg7q")
+texture_pressed = ExtResource("9_t1rx8")
+texture_hover = ExtResource("10_8iemx")
+texture_focused = ExtResource("10_8iemx")
+
+[node name="DebugLabel" type="Label" parent="." unique_id=394652646]
+layout_mode = 0
+offset_left = 1486.0
+offset_top = 20.0
+offset_right = 1847.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 32
+text = "Debug label: VERSION = "
 
 [connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/ValidateButton" to="." method="_on_validate_button_pressed"]
-[connection signal="pressed" from="PanelContainer/HBoxContainer/MarginContainer2/PanelContainer/HintButton" to="." method="_on_hint_button_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/HintButton" to="." method="_on_hint_button_pressed"]
