@@ -4,7 +4,9 @@
 [ext_resource type="Theme" uid="uid://dswlx0k1a324t" path="res://assets/theme.tres" id="1_mx8sn"]
 [ext_resource type="Script" uid="uid://dpau3lqabweyd" path="res://scripts/level.gd" id="1_w7c3h"]
 [ext_resource type="Texture2D" uid="uid://c2ruxucr3240e" path="res://assets/art/background.png" id="3_ppgk2"]
-[ext_resource type="Texture2D" uid="uid://bakqsdiy1kk5o" path="res://assets/art/helpIcon.png" id="5_2r41h"]
+[ext_resource type="Texture2D" uid="uid://bv6lku3trcms5" path="res://assets/art/ButtonNormal.png" id="5_klq6b"]
+[ext_resource type="Texture2D" uid="uid://dssho0x4expor" path="res://assets/art/ButtonPressed.png" id="6_b121j"]
+[ext_resource type="Texture2D" uid="uid://bjixojgxdjqou" path="res://assets/art/ButtonHover.png" id="7_8c41q"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wbigs"]
 texture = ExtResource("3_ppgk2")
@@ -12,25 +14,6 @@ texture = ExtResource("3_ppgk2")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5x3i2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fjbxc"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8487m"]
-bg_color = Color(0.19607843, 0.18431373, 0.43529412, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_blend = true
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfaeq"]
-bg_color = Color(0.5058824, 0.49411765, 0.7490196, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
 
 [node name="Level" type="Control" unique_id=1153732440]
 layout_mode = 3
@@ -134,20 +117,15 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fjbxc")
 
-[node name="HintButton" type="Button" parent="PanelContainer/HBoxContainer/MarginContainer2/PanelContainer" unique_id=612600384]
+[node name="HintButton" type="TextureButton" parent="PanelContainer/HBoxContainer/MarginContainer2/PanelContainer" unique_id=872392301]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(450, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/h_separation = 10
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_8487m")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_pfaeq")
-text = "Ask Merlin for advice"
-icon = ExtResource("5_2r41h")
-icon_alignment = 2
-expand_icon = true
+texture_normal = ExtResource("5_klq6b")
+texture_pressed = ExtResource("6_b121j")
+texture_hover = ExtResource("7_8c41q")
 
 [connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/ValidateButton" to="." method="_on_validate_button_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/MarginContainer2/PanelContainer/HintButton" to="." method="_on_hint_button_pressed"]
