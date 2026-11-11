@@ -10,9 +10,7 @@ class_name MarkerButton
 
 @onready var textures : Array[CompressedTexture2D] = [default_texture, yellow_texture, blue_texture, red_texture]
 var idx : int = 0
-const LIAR_IDX = 1
-#TODO: Changer le fonctionnement de la validation avec les nouveaux boutons
 
 func _on_pressed() -> void:
-	idx = (idx + 1) % 4
+	idx = (idx + 1) % textures.size()
 	texture_normal = textures[idx]
