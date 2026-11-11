@@ -15,6 +15,7 @@ enum ColorGroup {
 @onready var texture_rect : TextureRect = %TextureRect
 @onready var marker_button : MarkerButton = %MarkerButton
 @onready var label: Label = %Label
+@onready var texture_button: TextureButton = %TextureButton
 
 @onready var red_texture : CompressedTexture2D = preload("res://assets/art/cards/redCard.png")
 @onready var yellow_texture : CompressedTexture2D = preload("res://assets/art/cards/yellowCard.png")
@@ -34,4 +35,4 @@ func _ready() -> void:
 	init_person()
 
 func is_guess_correct() -> bool:
-	return (marker_button.idx == marker_button.LIAR_IDX and is_liar) or (marker_button.idx != marker_button.LIAR_IDX and not is_liar)
+	return (texture_button.button_pressed and is_liar or not texture_button.button_pressed and not is_liar)
