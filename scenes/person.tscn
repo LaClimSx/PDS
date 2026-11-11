@@ -81,8 +81,10 @@ size_flags_horizontal = 0
 toggle_mode = true
 texture_normal = ExtResource("2_526uv")
 texture_pressed = ExtResource("3_yhvuw")
+ignore_texture_size = true
 stretch_mode = 0
 
 [node name="MarkerButton" parent="MarginContainer/HBoxContainer" unique_id=1708873835 instance=ExtResource("3_jf287")]
 unique_name_in_owner = true
 layout_mode = 2
+ignore_texture_size = true
