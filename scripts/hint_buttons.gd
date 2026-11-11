@@ -35,3 +35,4 @@ func on_button_pressed(idx: int) -> void:
 	#If button is not the last, enable next one
 	if idx < buttons.size() - 1 :
 		buttons[idx + 1].disabled = false
+	pressed.emit(idx)
