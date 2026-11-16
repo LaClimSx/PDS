@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://din8bcchia8ap"]
+
+[ext_resource type="PackedScene" uid="uid://de2w83gncyih3" path="res://scenes/levels/level.tscn" id="1_j2425"]
+
+[node name="Level2" unique_id=1153732440 node_paths=PackedStringArray("point_persons") instance=ExtResource("1_j2425")]
+point_persons = []
+teach_text = ""
+bottom_out_text = ""
+
+[node name="Person" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" parent_id_path=PackedInt32Array(1456320327) index="0" unique_id=1970352386]
+color = 1
+text = "My bottom neighbor is telling the truth"
+
+[node name="Person2" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" parent_id_path=PackedInt32Array(1456320327) index="1" unique_id=955561553]
+is_liar = false
+text = "I am telling the truth"
+
+[node name="Person3" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" parent_id_path=PackedInt32Array(1456320327) index="2" unique_id=301645523]
+color = 0
+text = "At least one oracle lies"
+
+[node name="Person4" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" parent_id_path=PackedInt32Array(1456320327) index="3" unique_id=1899548976]
+color = 1
+is_liar = true
+text = "No oracle lies"
