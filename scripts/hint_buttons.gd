@@ -1,6 +1,7 @@
 extends HBoxContainer
 class_name HintButtonContainer
 
+#TODO: connect in level
 signal pressed(hint: int)
 
 @onready var first_button: Button = $Button1
@@ -35,4 +36,4 @@ func on_button_pressed(idx: int) -> void:
 	#If button is not the last, enable next one
 	if idx < buttons.size() - 1 :
 		buttons[idx + 1].disabled = false
-	pressed.emit(idx)
+	pressed.emit(idx + 1)

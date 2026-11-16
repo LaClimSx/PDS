@@ -21,6 +21,15 @@ enum ColorGroup {
 @onready var yellow_texture : CompressedTexture2D = preload("res://assets/art/cards/yellowCard.png")
 @onready var blue_texture : CompressedTexture2D = preload("res://assets/art/cards/blueCard.png")
 
+@onready var red_liar_texture : CompressedTexture2D = preload("res://assets/art/cards/redCardLiar.png")
+@onready var yellow_liar_texture : CompressedTexture2D = preload("res://assets/art/cards/yellowCardLiar.png")
+@onready var blue_liar_texture : CompressedTexture2D = preload("res://assets/art/cards/blueCardLiar.png")
+
+@onready var highlight_stylebox : StyleBoxFlat = preload("res://assets/highlight_stylebox.tres")
+@onready var liar_stylebox : StyleBoxFlat = preload("res://assets/liar_stylebox.tres")
+@onready var innocent_stylebox : StyleBoxFlat = preload("res://assets/innocent_stylebox.tres")
+
+
 func init_person() -> void:
 	match color:
 		ColorGroup.RED:
@@ -36,3 +45,20 @@ func _ready() -> void:
 
 func is_guess_correct() -> bool:
 	return (texture_button.button_pressed and is_liar or not texture_button.button_pressed and not is_liar)
+
+func highlight() -> void:
+	add_theme_stylebox_override("panel", highlight_stylebox)
+
+func reveal_guilty(correct_guess: bool) -> void:
+	if not correct_guess:
+		add_theme_stylebox_override("panel", liar_stylebox)
+	else:
+		add_theme_stylebox_override("panel", innocent_stylebox)
+	if is_liar:
+		match color:
+			ColorGroup.RED:
+				texture_rect.texture = red_liar_texture
+			ColorGroup.GREEN:
+				texture_rect.texture = yellow_liar_texture
+			ColorGroup.BLUE:
+				texture_rect.texture = blue_liar_texture
