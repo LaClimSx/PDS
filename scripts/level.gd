@@ -10,8 +10,12 @@ class_name Level
 @onready var stopwatch : Label = %Stopwatch
 @onready var hint_text: RichTextLabel = %HintText
 
+@onready var TWO_BUTTON_PANEL : PackedScene = preload("res://scenes/two_button_panel.tscn")
+
 var time_passed: float = 0.0
 var stopped: bool = false
+
+var nb_tries: int = 0
 
 func _ready() -> void:
 	$DebugLabel.text = "Debug label: VERSION = " + str(Global.VERSION)
@@ -34,25 +38,45 @@ func _process(delta: float) -> void:
 		stopwatch.text = min_string + ":" + sec_string + "s"
 
 
+#VALIDATION
+
 func _on_validate_button_pressed() -> void:
 	stopped = true
+	var validation_panel: TwoButtonPanel = TWO_BUTTON_PANEL.instantiate()
+	add_child(validation_panel)
+	validation_panel.create("Are you sure?", "Yes", "No")
+	validation_panel.pressed_1.connect(validate)
+	validation_panel.pressed_2.connect(resume)
+
+
+func validate() -> void:
+	nb_tries += 1
+	var hint_button_visibilty : bool = %HintButton.visible
+	var hint_container_visibility : bool = %HintButtonContainer.visible
 	%HintButton.visible = false
 	%HintButtonContainer.visible = false
 	var correct: bool = true
 	var idx: int = 0
 	for person: Person in persons:
-		if  not person.is_guess_correct():
-			person.reveal_guilty(false)
+		if not person.is_guess_correct():
 			print("Incorrect for person:", idx_to_position(idx, %GridContainer.columns))
 			correct = false
-		else:
-			person.reveal_guilty(true)
 		idx += 1
 	if correct:
-		print("Correct!")
+		for person: Person in persons: 
+			person.reveal_guilty(true)
 	else: 
 		print("You made at least one mistake")
+		%HintButton.visible = hint_button_visibilty
+		%HintButtonContainer.visible = hint_container_visibility
+		stopped = false
 
+
+func resume() -> void:
+	stopped = false
+
+
+#HINTS
 
 func _on_hint_button_pressed() -> void:
 	%HintButton.visible = false
@@ -92,6 +116,8 @@ func bottom_out_hint() -> void:
 func edit_hint_text(txt: String, additive: bool = true) -> void:
 	hint_text.text = hint_text.text + txt + "\n \n" if additive else txt
 
+
+#HELPER FUNCS
 
 static func idx_to_position(idx: int, nb_columns: int) -> String:
 	var column_str : String = String.chr(65 + (idx % nb_columns))
