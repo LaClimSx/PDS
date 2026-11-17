@@ -11,7 +11,7 @@ class_name Level
 @onready var stopwatch : Label = %Stopwatch
 @onready var hint_text: RichTextLabel = %HintText
 
-@onready var TWO_BUTTON_PANEL : PackedScene = preload("res://scenes/two_button_panel.tscn")
+const TWO_BUTTON_PANEL : PackedScene = preload("res://scenes/two_button_panel.tscn")
 
 var time_passed: float = 0.0
 var stopped: bool = false
@@ -84,7 +84,7 @@ func end_level(solved: bool = true) -> void:
 	else:
 		print("given up huh ?")
 	#TODO: level transitions
-	#Global.next_level()
+	Global.next_level()
 
 
 #HINTS
@@ -124,7 +124,7 @@ func bottom_out_hint() -> void:
 	for i: int in range(persons.size()):
 		var person: Person = persons[i]
 		person.show_index(idx_to_position(i))
-	%TopSpacing.size_flags_vertical = false
+	%TopSpacing.size_flags_vertical = SIZE_SHRINK_BEGIN
 	edit_hint_text(bottom_out_text)
 
 
