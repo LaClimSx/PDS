@@ -1,0 +1,390 @@
+[gd_scene format=3 uid="uid://ck0cwjw034ely"]
+
+[ext_resource type="PackedScene" uid="uid://de2w83gncyih3" path="res://scenes/levels/level.tscn" id="1_bsno1"]
+[ext_resource type="Script" uid="uid://ds4tm0o28lhvx" path="res://scripts/tuto.gd" id="1_onjet"]
+[ext_resource type="Texture2D" uid="uid://c2ruxucr3240e" path="res://assets/art/background.png" id="2_fwca6"]
+[ext_resource type="Texture2D" uid="uid://bco7yg0caaa4w" path="res://assets/art/tuto/merlin.png" id="3_561sr"]
+[ext_resource type="Texture2D" uid="uid://cxm1w20y8a1j8" path="res://assets/art/tuto/startButtonNormal.png" id="4_kisrk"]
+[ext_resource type="Texture2D" uid="uid://c3mun3ajadc05" path="res://assets/art/tuto/startButtonPressed.png" id="5_onjet"]
+[ext_resource type="Texture2D" uid="uid://m1g5jjt0r00r" path="res://assets/art/tuto/startButtonHover.png" id="6_ser3y"]
+[ext_resource type="Texture2D" uid="uid://cnlj54cys44qk" path="res://assets/art/tuto/nextButtonNormal.png" id="7_bur5e"]
+[ext_resource type="Texture2D" uid="uid://c68n4f3ie6u0" path="res://assets/art/tuto/nextButtonPressed.png" id="8_bvb2u"]
+[ext_resource type="Texture2D" uid="uid://cy6my3aosm6be" path="res://assets/art/tuto/nextButtonHover.png" id="9_y20xe"]
+[ext_resource type="Texture2D" uid="uid://q7rnkhqd4y2y" path="res://assets/art/tuto/nextButtonDisabled.png" id="10_bvb2u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yvjhm"]
+texture = ExtResource("2_fwca6")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_onjet"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yvjhm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ser3y"]
+
+[node name="Tuto" type="Control" unique_id=1535244062]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_onjet")
+
+[node name="TutoLevel" parent="." unique_id=1153732440 instance=ExtResource("1_bsno1")]
+layout_mode = 1
+
+[node name="Start" type="PanelContainer" parent="." unique_id=255708464]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_yvjhm")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Start" unique_id=540726846]
+layout_mode = 2
+
+[node name="Spacing" type="Control" parent="Start/HBoxContainer" unique_id=1014488110]
+custom_minimum_size = Vector2(750, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Start/HBoxContainer" unique_id=360343594]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Start/HBoxContainer/MarginContainer" unique_id=1108452634]
+propagate_maximum_size = false
+layout_mode = 2
+alignment = 1
+
+[node name="Welcome" type="Label" parent="Start/HBoxContainer/MarginContainer/VBoxContainer" unique_id=305204911]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Welcome to FindName Game !
+
+Will you be able to catch all liars ?
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Data" type="Label" parent="Start/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1616960434]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "By clicking start you agree to the collect of your session data, for research purposes"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Spacer" type="Control" parent="Start/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1095765344]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Start" type="TextureButton" parent="Start/HBoxContainer/MarginContainer/VBoxContainer" unique_id=510540400]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_kisrk")
+texture_pressed = ExtResource("5_onjet")
+texture_hover = ExtResource("6_ser3y")
+
+[node name="GiveUp" type="PanelContainer" parent="." unique_id=372689507]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_onjet")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GiveUp" unique_id=33747166]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Spacing" type="Control" parent="GiveUp/HBoxContainer" unique_id=870022282]
+custom_minimum_size = Vector2(750, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GiveUp/HBoxContainer" unique_id=2047305625]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GiveUp/HBoxContainer/MarginContainer" unique_id=427516109]
+propagate_maximum_size = false
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="GiveUp/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1271233489]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "First, know you can give up at anytime by clicking on the \"Give up\" button."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Spacer" type="Control" parent="GiveUp/HBoxContainer/MarginContainer/VBoxContainer" unique_id=466391070]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Ok" type="TextureButton" parent="GiveUp/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1354747569]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+disabled = true
+texture_normal = ExtResource("7_bur5e")
+texture_pressed = ExtResource("8_bvb2u")
+texture_hover = ExtResource("9_y20xe")
+texture_disabled = ExtResource("10_bvb2u")
+
+[node name="Markers" type="PanelContainer" parent="." unique_id=19372712]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yvjhm")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Markers" unique_id=1555118711]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Spacing" type="Control" parent="Markers/HBoxContainer" unique_id=887688663]
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Markers/HBoxContainer" unique_id=1228511170]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Markers/HBoxContainer/MarginContainer" unique_id=674663605]
+propagate_maximum_size = false
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Markers/HBoxContainer/MarginContainer/VBoxContainer" unique_id=784040819]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Use the rounded markers, for informations"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Spacer" type="Control" parent="Markers/HBoxContainer/MarginContainer/VBoxContainer" unique_id=2064288922]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="OkMarker" type="TextureButton" parent="Markers/HBoxContainer/MarginContainer/VBoxContainer" unique_id=431315569]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_bur5e")
+texture_pressed = ExtResource("8_bvb2u")
+texture_hover = ExtResource("9_y20xe")
+texture_disabled = ExtResource("10_bvb2u")
+
+[node name="Flags" type="PanelContainer" parent="." unique_id=1977316841]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yvjhm")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Flags" unique_id=352841134]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Spacing" type="Control" parent="Flags/HBoxContainer" unique_id=308023822]
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Flags/HBoxContainer" unique_id=1212136353]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Flags/HBoxContainer/MarginContainer" unique_id=1251816475]
+propagate_maximum_size = false
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Flags/HBoxContainer/MarginContainer/VBoxContainer" unique_id=195179058]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Use the bookmark to flag the liars "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Spacer" type="Control" parent="Flags/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1308406580]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="OkLiar" type="TextureButton" parent="Flags/HBoxContainer/MarginContainer/VBoxContainer" unique_id=2118906614]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_bur5e")
+texture_pressed = ExtResource("8_bvb2u")
+texture_hover = ExtResource("9_y20xe")
+texture_disabled = ExtResource("10_bvb2u")
+
+[node name="Validate" type="PanelContainer" parent="." unique_id=1566150969]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yvjhm")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Validate" unique_id=1654363944]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Spacing" type="Control" parent="Validate/HBoxContainer" unique_id=1334820837]
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Validate/HBoxContainer" unique_id=607769940]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Validate/HBoxContainer/MarginContainer" unique_id=1894085012]
+propagate_maximum_size = false
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Validate/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1406977002]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Once you found all the liars, click \"Validate\" to check your answer"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Spacer" type="Control" parent="Validate/HBoxContainer/MarginContainer/VBoxContainer" unique_id=551791392]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="OkValidate" type="TextureButton" parent="Validate/HBoxContainer/MarginContainer/VBoxContainer" unique_id=980925822]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_bur5e")
+texture_pressed = ExtResource("8_bvb2u")
+texture_hover = ExtResource("9_y20xe")
+texture_disabled = ExtResource("10_bvb2u")
+
+[node name="Hints" type="PanelContainer" parent="." unique_id=1561326415]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ser3y")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Hints" unique_id=1964929162]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Spacing" type="Control" parent="Hints/HBoxContainer" unique_id=431072295]
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Hints/HBoxContainer" unique_id=1443261466]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Hints/HBoxContainer/MarginContainer" unique_id=1057618858]
+propagate_maximum_size = false
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Hints/HBoxContainer/MarginContainer/VBoxContainer" unique_id=2021397468]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "And don't hesitate to ask me for bit of help !"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Spacer" type="Control" parent="Hints/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1869472916]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="OkHints" type="TextureButton" parent="Hints/HBoxContainer/MarginContainer/VBoxContainer" unique_id=2033733434]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_bur5e")
+texture_pressed = ExtResource("8_bvb2u")
+texture_hover = ExtResource("9_y20xe")
+texture_disabled = ExtResource("10_bvb2u")
+
+[node name="Merlin" type="TextureRect" parent="." unique_id=665251670]
+layout_mode = 0
+offset_right = 1924.0
+offset_bottom = 1080.0
+mouse_filter = 2
+texture = ExtResource("3_561sr")
+stretch_mode = 2
+
+[connection signal="pressed" from="Start/HBoxContainer/MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="GiveUp/HBoxContainer/MarginContainer/VBoxContainer/Ok" to="." method="_on_ok_pressed"]
+[connection signal="pressed" from="Markers/HBoxContainer/MarginContainer/VBoxContainer/OkMarker" to="." method="_on_ok_marker_pressed"]
+[connection signal="pressed" from="Flags/HBoxContainer/MarginContainer/VBoxContainer/OkLiar" to="." method="_on_ok_liar_pressed"]
+[connection signal="pressed" from="Validate/HBoxContainer/MarginContainer/VBoxContainer/OkValidate" to="." method="_on_ok_validate_pressed"]
