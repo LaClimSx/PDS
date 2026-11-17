@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://cfdo6yclc6xxe"]
-
-[ext_resource type="StyleBox" uid="uid://bo0uaef0m0ebs" path="res://assets/highlight_buttons.tres" id="1_oldfv"]
-[ext_resource type="Script" uid="uid://c3l3qxmxsft8p" path="res://scripts/highlight_frame.gd" id="2_7vr5c"]
-
-[node name="HighlightFrame" type="Panel" unique_id=1335684817]
-mouse_filter = 2
-theme_override_styles/panel = ExtResource("1_oldfv")
-script = ExtResource("2_7vr5c")

@@ -1,6 +1,6 @@
 extends Control
 
-const HIGHLIGHT_FRAME = preload("res://scenes/highlightFrame.tscn")
+const HIGHLIGHT_FRAME = preload("res://scenes/highlight_frame.tscn")
 const LVL1 = preload("res://scenes/levels/level_1.tscn")
 
 var highlight_frame: Panel    
@@ -15,7 +15,7 @@ func _ready() -> void:
 	$Validate.hide()
 	$Hints.hide()
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if highlight_frame and is_instance_valid(highlight_target):
 		_update_frame()
 
@@ -25,7 +25,7 @@ func _on_start_pressed() -> void:
 	$TutoLevel/PanelContainer/HBoxContainer.hide()
 	$GiveUp/HBoxContainer/MarginContainer/VBoxContainer/Ok.disabled = true
 	$GiveUp.show()
-	var give_up = $TutoLevel/PanelContainer/MarginContainer/GiveUpButton
+	var give_up : TextureButton = $TutoLevel/PanelContainer/MarginContainer/GiveUpButton
 	highlight(give_up)
 	await give_up.pressed
 	unhighlight()
@@ -37,7 +37,7 @@ func _on_ok_pressed() -> void:
 	$TutoLevel/PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/HintButton.hide()
 	$Markers.show()
 	$Markers/HBoxContainer/MarginContainer/VBoxContainer/OkMarker.disabled = true
-	var markers = $TutoLevel/PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person/MarginContainer/HBoxContainer/MarkerButton
+	var markers : MarkerButton = $TutoLevel/PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person/MarginContainer/HBoxContainer/MarkerButton
 	highlight(markers)
 	await markers.pressed
 	await markers.pressed
@@ -51,7 +51,7 @@ func _on_ok_marker_pressed() -> void:
 	$Markers.hide()
 	$Flags/HBoxContainer/MarginContainer/VBoxContainer/OkLiar.disabled = true
 	$Flags.show()
-	var liar = $TutoLevel/PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person/MarginContainer/HBoxContainer/TextureButton
+	var liar : TextureButton = $TutoLevel/PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person/MarginContainer/HBoxContainer/TextureButton
 	highlight(liar)
 	await liar.pressed
 	unhighlight()
@@ -61,7 +61,7 @@ func _on_ok_liar_pressed() -> void:
 	$Flags.hide()
 	$Validate/HBoxContainer/MarginContainer/VBoxContainer/OkValidate.disabled = true
 	$Validate.show()
-	var validate = $TutoLevel/PanelContainer/HBoxContainer/VBoxContainer/ValidateButton
+	var validate : Button = $TutoLevel/PanelContainer/HBoxContainer/VBoxContainer/ValidateButton
 	highlight(validate)
 	await validate.pressed
 	unhighlight()
@@ -72,7 +72,7 @@ func _on_ok_validate_pressed() -> void:
 	#Check if there is hints if there is not
 	$TutoLevel/PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/HintButton.show()
 	$Validate.hide()	
-	var label = $Hints/HBoxContainer/MarginContainer/VBoxContainer/Label
+	var label : Label = $Hints/HBoxContainer/MarginContainer/VBoxContainer/Label
 	if (Global.VERSION == Global.Version.NO_HELP):
 		label.text = "You are now ready for your first level !"
 		$Hints.show()
@@ -81,7 +81,7 @@ func _on_ok_validate_pressed() -> void:
 		$Hints/HBoxContainer/MarginContainer/VBoxContainer/OkHints.disabled = true
 		label.text = "And don't hesitate to ask me for bit of help at anytime !"
 		$Hints.show()
-		var help = $TutoLevel/PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/HintButton
+		var help : TextureButton = $TutoLevel/PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/HintButton
 		highlight(help)
 		await help.pressed
 		unhighlight()
