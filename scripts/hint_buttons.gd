@@ -1,7 +1,6 @@
 extends HBoxContainer
 class_name HintButtonContainer
 
-#TODO: connect in level
 signal pressed(hint: int)
 
 @onready var first_button: Button = $Button1
@@ -12,7 +11,6 @@ func create(VERSION: Global.Version) -> void :
 	match VERSION:
 		Global.Version.NO_HELP:
 			first_button.text = "Impossible"
-			print("Shouldn't even be possible")
 			return
 		Global.Version.BOTTOM_OUT:
 			first_button.text = "Show solution"

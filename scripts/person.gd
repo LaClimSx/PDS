@@ -41,7 +41,7 @@ func init_person() -> void:
 	info_label.text = text
 
 func _ready() -> void:
-	%NumberLabel.visible = false
+	%IndexLabel.visible = false
 	init_person()
 
 func is_guess_correct() -> bool:
@@ -50,9 +50,9 @@ func is_guess_correct() -> bool:
 func highlight() -> void:
 	add_theme_stylebox_override("panel", highlight_stylebox)
 
-func show_number(nb: int) -> void:
-	%NumberLabel.text = str(nb)
-	%NumberLabel.visible = true
+func show_index(idx: String) -> void:
+	%IndexLabel.text = idx
+	%IndexLabel.visible = true
 
 func reveal_guilty(correct_guess: bool) -> void:
 	if not correct_guess:

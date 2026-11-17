@@ -6,7 +6,8 @@ class_name Level
 @export var teach_text : String = ""
 @export var bottom_out_text : String = ""
 
-@onready var persons : Array = %GridContainer.get_children()
+@onready var grid_container: GridContainer = %GridContainer
+@onready var persons : Array = grid_container.get_children()
 @onready var stopwatch : Label = %Stopwatch
 @onready var hint_text: RichTextLabel = %HintText
 
@@ -59,7 +60,7 @@ func validate() -> void:
 	var idx: int = 0
 	for person: Person in persons:
 		if not person.is_guess_correct():
-			print("Incorrect for person:", idx_to_position(idx, %GridContainer.columns))
+			print("Incorrect for person:", idx_to_position(idx))
 			correct = false
 		idx += 1
 	if correct:
@@ -120,7 +121,7 @@ func teach_hint() -> void:
 func bottom_out_hint() -> void:
 	for i: int in range(persons.size()):
 		var person: Person = persons[i]
-		person.show_number(i + 1)
+		person.show_index(idx_to_position(i))
 	edit_hint_text(bottom_out_text)
 
 
@@ -130,7 +131,7 @@ func edit_hint_text(txt: String, additive: bool = true) -> void:
 
 #HELPER FUNCS
 
-static func idx_to_position(idx: int, nb_columns: int) -> String:
+func idx_to_position(idx: int, nb_columns: int = grid_container.columns) -> String:
 	var column_str : String = String.chr(65 + (idx % nb_columns))
 	@warning_ignore("integer_division")
 	return column_str + str((idx / nb_columns) + 1)

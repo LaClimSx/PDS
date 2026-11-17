@@ -3,3 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://de2w83gncyih3" path="res://scenes/levels/level.tscn" id="1_ksju7"]
 
 [node name="Level1" unique_id=1153732440 instance=ExtResource("1_ksju7")]
+bottom_out_text = "A1 and B2 both give the same information, and since there is only one liar, at least one of them must say the truth, so B2 is lying."
