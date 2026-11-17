@@ -14,7 +14,7 @@ enum ColorGroup {
 
 @onready var texture_rect : TextureRect = %TextureRect
 @onready var marker_button : MarkerButton = %MarkerButton
-@onready var label: Label = %Label
+@onready var info_label: Label = %Info
 @onready var texture_button: TextureButton = %TextureButton
 
 @onready var red_texture : CompressedTexture2D = preload("res://assets/art/cards/redCard.png")
@@ -38,9 +38,10 @@ func init_person() -> void:
 			texture_rect.texture = yellow_texture
 		ColorGroup.BLUE:
 			texture_rect.texture = blue_texture
-	label.text = text
+	info_label.text = text
 
 func _ready() -> void:
+	%NumberLabel.visible = false
 	init_person()
 
 func is_guess_correct() -> bool:
@@ -48,6 +49,10 @@ func is_guess_correct() -> bool:
 
 func highlight() -> void:
 	add_theme_stylebox_override("panel", highlight_stylebox)
+
+func show_number(nb: int) -> void:
+	%NumberLabel.text = str(nb)
+	%NumberLabel.visible = true
 
 func reveal_guilty(correct_guess: bool) -> void:
 	if not correct_guess:

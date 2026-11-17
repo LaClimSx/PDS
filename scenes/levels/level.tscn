@@ -184,3 +184,4 @@ text = "Debug label: VERSION = "
 [connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/ValidateButton" to="." method="_on_validate_button_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/HintButton" to="." method="_on_hint_button_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/HintButtonContainer" to="." method="asked_for_hint"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/GiveUpButton" to="." method="end_level" binds= [false]]

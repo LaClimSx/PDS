@@ -65,6 +65,7 @@ func validate() -> void:
 	if correct:
 		for person: Person in persons: 
 			person.reveal_guilty(true)
+		end_level()
 	else: 
 		print("You made at least one mistake")
 		%HintButton.visible = hint_button_visibilty
@@ -74,6 +75,13 @@ func validate() -> void:
 
 func resume() -> void:
 	stopped = false
+
+
+func end_level(solved: bool = true) -> void:
+	if solved:
+		print("congrats")
+	else:
+		print("given up huh ?")
 
 
 #HINTS
@@ -110,6 +118,9 @@ func teach_hint() -> void:
 
 
 func bottom_out_hint() -> void:
+	for i: int in range(persons.size()):
+		var person: Person = persons[i]
+		person.show_number(i + 1)
 	edit_hint_text(bottom_out_text)
 
 
