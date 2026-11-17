@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://7uynlfsofcn8"]
+
+[ext_resource type="PackedScene" uid="uid://de2w83gncyih3" path="res://scenes/levels/level.tscn" id="1_kp46y"]
+[ext_resource type="PackedScene" uid="uid://b2qmulxjiaky" path="res://scenes/person.tscn" id="2_tnd5v"]
+
+[node name="LevelCy5" unique_id=1153732440 instance=ExtResource("1_kp46y")]
+liar_quantity = 4
+
+[node name="GridContainer" parent="PanelContainer/HBoxContainer/VBoxContainer" parent_id_path=PackedInt32Array(1446626616) index="1" unique_id=1456320327]
+columns = 3
+
+[node name="Person" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="0" unique_id=1970352386]
+color = 2
+text = "My right neighbor has the most lying neighbors"
+
+[node name="Person2" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="1" unique_id=955561553]
+is_liar = false
+text = "Four of my neighbors are liars"
+
+[node name="Person3" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="2" unique_id=301645523]
+color = 1
+is_liar = true
+text = "This row had at least 2 liars"
+
+[node name="Person4" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="3" unique_id=1899548976]
+is_liar = true
+text = "My below neighbor is lying"
+
+[node name="Person5" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="4" unique_id=270157986 instance=ExtResource("2_tnd5v")]
+layout_mode = 2
+color = 1
+is_liar = true
+text = "This row has at least one truth-teller"
+
+[node name="Person6" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="5" unique_id=919245891 instance=ExtResource("2_tnd5v")]
+layout_mode = 2
+is_liar = true
+text = "This column only has one liar"
+
+[node name="Person7" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="6" unique_id=1181329879 instance=ExtResource("2_tnd5v")]
+layout_mode = 2
+color = 2
+text = "Witches and Oracles have the same number of liars"
+
+[node name="Person8" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="7" unique_id=1337602827 instance=ExtResource("2_tnd5v")]
+layout_mode = 2
+color = 2
+text = "This row only has truth-tellers"
+
+[node name="Person9" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="8" unique_id=895661934 instance=ExtResource("2_tnd5v")]
+layout_mode = 2
+text = "This column has exactly one truth-teller"
