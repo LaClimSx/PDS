@@ -116,6 +116,8 @@ theme_override_constants/separation = 16
 alignment = 1
 
 [node name="TopSpacing" type="Control" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=1949993103]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 3
 
