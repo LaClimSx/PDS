@@ -44,8 +44,8 @@ text = "There is no wizard that lies"
 [node name="Person8" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="7" unique_id=74820169 instance=ExtResource("2_bl61q")]
 layout_mode = 2
 color = 1
-text = "There are as many witch truth tellers than oracles"
+text = "There are as many witch truth-tellers than oracles"
 
 [node name="Person9" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="8" unique_id=1436297446 instance=ExtResource("2_bl61q")]
 layout_mode = 2
-text = "My top neighbor is a truth teller"
+text = "My top neighbor is a truth-teller"
