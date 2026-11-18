@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://chauv6qpjsf48"]
+
+[ext_resource type="PackedScene" uid="uid://de2w83gncyih3" path="res://scenes/levels/level.tscn" id="1_sqmjf"]
+[ext_resource type="PackedScene" uid="uid://b2qmulxjiaky" path="res://scenes/person.tscn" id="2_ljrt2"]
+
+[node name="Level10" unique_id=1153732440 node_paths=PackedStringArray("point_persons") instance=ExtResource("1_sqmjf")]
+liar_quantity = 4
+point_persons = [NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person2"), NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person3"), NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person6")]
+teach_text = "When someones accuses someone else of lying, they must have opposite roles."
+bottom_out_text = "B1 and C1 accuse each other, so they have opposite roles. This means C2 has to tell the truth. A1 accuses B2, so they also have opposite roles. B3 and C3's statements cannot both be true, so at least one of them lies. We now know 1 liar, and 3 sets of two people that have to contain a liar. This means A2 and A3 have to tell the truth as there are no more liars. This implies that A1 and B1 lie. C3's statement can no longer be true, so it is the last liar."
+
+[node name="GridContainer" parent="PanelContainer/HBoxContainer/VBoxContainer" parent_id_path=PackedInt32Array(1446626616) index="1" unique_id=1456320327]
+columns = 3
+
+[node name="Person" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="0" unique_id=1970352386]
+color = 2
+is_liar = true
+text = "The person with the most witch neighbors is a liar"
+
+[node name="Person2" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="1" unique_id=955561553]
+color = 0
+text = "My right neighbor is a liar"
+
+[node name="Person3" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="2" unique_id=301645523]
+text = "My left neighbors is a liar"
+
+[node name="Person4" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="3" unique_id=1899548976]
+color = 1
+text = "This row contains at most one liar"
+
+[node name="Person5" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="4" unique_id=236737155 instance=ExtResource("2_ljrt2")]
+layout_mode = 2
+color = 2
+text = "At least one of my wizard neighbors is a liar"
+
+[node name="Person6" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="5" unique_id=585189200 instance=ExtResource("2_ljrt2")]
+layout_mode = 2
+is_liar = true
+text = "All my neighbors are truth-tellers"
+
+[node name="Person7" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="6" unique_id=1862870228 instance=ExtResource("2_ljrt2")]
+layout_mode = 2
+color = 1
+text = "Exactly one wizard is a liar"
+
+[node name="Person8" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="7" unique_id=2119502076 instance=ExtResource("2_ljrt2")]
+layout_mode = 2
+text = "Exactly one witch is a truth-teller"
+
+[node name="Person9" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="8" unique_id=351062936 instance=ExtResource("2_ljrt2")]
+layout_mode = 2
+color = 1
+is_liar = true
+text = "Exactly 2 witches are truth-tellers"

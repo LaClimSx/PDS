@@ -3,8 +3,8 @@ class_name Level
 
 @export_range(1, 9) var liar_quantity: int = 1
 @export var point_persons : Array[Person] = []
-@export var teach_text : String = ""
-@export var bottom_out_text : String = ""
+@export_multiline var teach_text : String = ""
+@export_multiline var bottom_out_text : String = ""
 
 @onready var grid_container: GridContainer = %GridContainer
 @onready var persons : Array = grid_container.get_children()
@@ -91,7 +91,7 @@ func resume() -> void:
 
 func end_level(solved: bool = true) -> void:
 	if solved:
-		var end_popup : MerlinPopup = new_popup("Congrats, you found all the shapeshifters, ready for the next level?", 440, false)
+		var end_popup : MerlinPopup = new_popup("Congrats, you found all the shapeshifters, ready for the next level?", 460, false)
 		end_popup.set_button_text("Next Level")
 		end_popup.pressed.connect(Global.next_level)
 	else:

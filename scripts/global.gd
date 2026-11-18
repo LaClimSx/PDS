@@ -1,6 +1,6 @@
 extends Node
 
-const NB_OF_LEVELS: int = 10
+const NB_OF_LEVELS: int = 12
 var current_level: int = 0
 
 enum Version {
