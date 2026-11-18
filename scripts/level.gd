@@ -138,6 +138,7 @@ func point_hint() -> void:
 		p.highlight()
 
 func teach_hint() -> void:
+	%TopSpacing.size_flags_vertical = SIZE_SHRINK_BEGIN
 	edit_hint_text(teach_text)
 
 
