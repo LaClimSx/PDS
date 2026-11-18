@@ -37,7 +37,7 @@ func _marker_layer() -> void:
 	actual_level.show()
 	hint_button.hide()
 	validate_button.hide()
-	var marker_layer : MerlinPopup = new_popup("Use the rounded markers to write down useful info")
+	var marker_layer : MerlinPopup = new_popup("Use the rounded markers to write down useful info. Right click to reset a marker.")
 	highlight(marker_button)
 	await marker_button.pressed
 	await marker_button.pressed
