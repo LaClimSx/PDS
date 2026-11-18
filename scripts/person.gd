@@ -14,8 +14,8 @@ enum ColorGroup {
 
 @onready var texture_rect : TextureRect = %TextureRect
 @onready var marker_button : MarkerButton = %MarkerButton
-@onready var label: Label = %Label
-@onready var texture_button: TextureButton = %TextureButton
+@onready var info_label: Label = %Info
+@onready var bookmark_button: TextureButton = %BookmarkButton
 
 @onready var red_texture : CompressedTexture2D = preload("res://assets/art/cards/redCard.png")
 @onready var yellow_texture : CompressedTexture2D = preload("res://assets/art/cards/yellowCard.png")
@@ -38,16 +38,21 @@ func init_person() -> void:
 			texture_rect.texture = yellow_texture
 		ColorGroup.BLUE:
 			texture_rect.texture = blue_texture
-	label.text = text
+	info_label.text = text
 
 func _ready() -> void:
+	%IndexLabel.visible = false
 	init_person()
 
 func is_guess_correct() -> bool:
-	return (texture_button.button_pressed and is_liar or not texture_button.button_pressed and not is_liar)
+	return (bookmark_button.button_pressed and is_liar or not bookmark_button.button_pressed and not is_liar)
 
 func highlight() -> void:
 	add_theme_stylebox_override("panel", highlight_stylebox)
+
+func show_index(idx: String) -> void:
+	%IndexLabel.text = idx
+	%IndexLabel.visible = true
 
 func reveal_guilty(correct_guess: bool) -> void:
 	if not correct_guess:

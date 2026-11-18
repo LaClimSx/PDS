@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b2qmulxjiaky"]
 
 [ext_resource type="Script" uid="uid://qrvqgpqu80p0" path="res://scripts/person.gd" id="1_5dovg"]
+[ext_resource type="Theme" uid="uid://dswlx0k1a324t" path="res://assets/theme.tres" id="1_pfaeq"]
 [ext_resource type="Texture2D" uid="uid://buu2wmic8hq26" path="res://assets/art/cards/innocent.png" id="2_526uv"]
 [ext_resource type="Texture2D" uid="uid://bk8mwa517oxo" path="res://assets/art/cards/redCard.png" id="2_jf287"]
 [ext_resource type="PackedScene" uid="uid://c7s1h5dbmakdf" path="res://scenes/marker_button.tscn" id="3_jf287"]
@@ -29,6 +30,7 @@ corner_radius_bottom_left = 20
 [node name="Person" type="PanelContainer" unique_id=1970352386]
 offset_right = 80.0
 offset_bottom = 288.0
+theme = ExtResource("1_pfaeq")
 theme_override_styles/panel = SubResource("StyleBoxFlat_8iemx")
 script = ExtResource("1_5dovg")
 
@@ -59,7 +61,7 @@ layout_mode = 2
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Label" type="Label" parent="PanelContainer/PanelContainer/MarginContainer" unique_id=1428168406]
+[node name="Info" type="Label" parent="PanelContainer/PanelContainer/MarginContainer" unique_id=1428168406]
 unique_name_in_owner = true
 custom_maximum_size = Vector2(165, -1)
 layout_mode = 2
@@ -84,7 +86,7 @@ size_flags_vertical = 0
 theme_override_constants/separation = 8
 alignment = 2
 
-[node name="TextureButton" type="TextureButton" parent="MarginContainer/HBoxContainer" unique_id=1205844094]
+[node name="BookmarkButton" type="TextureButton" parent="MarginContainer/HBoxContainer" unique_id=1205844094]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(20, 33.3)
 custom_maximum_size = Vector2(20, 33.3)
@@ -100,3 +102,17 @@ stretch_mode = 0
 unique_name_in_owner = true
 layout_mode = 2
 ignore_texture_size = true
+
+[node name="NumberContainer" type="MarginContainer" parent="." unique_id=1047110260]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_left = 38
+theme_override_constants/margin_top = 8
+
+[node name="IndexLabel" type="Label" parent="NumberContainer" unique_id=1140010094]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "A1"

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bjpp041noaaa7"]
+
+[ext_resource type="PackedScene" uid="uid://de2w83gncyih3" path="res://scenes/levels/level.tscn" id="1_845dy"]
+[ext_resource type="PackedScene" uid="uid://b2qmulxjiaky" path="res://scenes/person.tscn" id="2_dswqx"]
+
+[node name="Level5" unique_id=1153732440 node_paths=PackedStringArray("point_persons") instance=ExtResource("1_845dy")]
+point_persons = [NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person4"), NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person6")]
+teach_text = "If there are more people than liars that agree on the same piece of information, it has to be true."
+bottom_out_text = "A2 and C2 both agree that A2 tells the truth. Since there is only one liar, it must be true. So all wizards tell the truth. Thus the liar is a neighbor of B3. If all of B3's non-neighbors tell the truth (i.e. row 1), then the only possible liar is C3."
+
+[node name="GridContainer" parent="PanelContainer/HBoxContainer/VBoxContainer" parent_id_path=PackedInt32Array(1446626616) index="1" unique_id=1456320327]
+columns = 3
+
+[node name="Person" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="0" unique_id=1970352386]
+text = "This column only has truth-tellers"
+
+[node name="Person2" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="1" unique_id=955561553]
+color = 0
+is_liar = false
+text = "All my neighbors are truth-tellers"
+
+[node name="Person3" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="2" unique_id=301645523]
+color = 1
+text = "None of my neighbors are liars"
+
+[node name="Person4" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="3" unique_id=1899548976]
+color = 2
+text = "Every wizard is a truth-teller"
+
+[node name="Person5" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="4" unique_id=1967406238 instance=ExtResource("2_dswqx")]
+layout_mode = 2
+color = 2
+text = "I am a truth-teller"
+
+[node name="Person6" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="5" unique_id=1288082222 instance=ExtResource("2_dswqx")]
+layout_mode = 2
+color = 1
+text = "This row only has truth-tellers"
+
+[node name="Person7" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="6" unique_id=144246455 instance=ExtResource("2_dswqx")]
+layout_mode = 2
+text = "I am a truth-teller"
+
+[node name="Person8" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="7" unique_id=1837874682 instance=ExtResource("2_dswqx")]
+layout_mode = 2
+color = 2
+text = "One of my neighbor is a liar"
+
+[node name="Person9" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="8" unique_id=49218740 instance=ExtResource("2_dswqx")]
+layout_mode = 2
+is_liar = true
+text = "One of my neighbor is a liar"

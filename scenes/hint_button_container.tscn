@@ -2,14 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bihvmtymo7dmj" path="res://scripts/hint_buttons.gd" id="1_qrxw2"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbigs"]
-content_margin_top = 4.0
-bg_color = Color(0.28627452, 0.18431373, 0.43529412, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
 [node name="HintButtonContainer" type="HBoxContainer" unique_id=159451774]
 custom_minimum_size = Vector2(450, 80)
 custom_maximum_size = Vector2(450, -1)
@@ -23,7 +15,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 34
-theme_override_styles/normal = SubResource("StyleBoxFlat_wbigs")
 text = "1
 
 "
