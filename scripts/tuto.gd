@@ -25,15 +25,14 @@ func _on_start_button_pressed() -> void:
 	$Start.queue_free()
 	actual_level.hide()
 	var give_up_layer : MerlinPopup = new_popup("First, know you can give up a level anytime by clicking on the \"Give up\" button.",
-	0, true)
+	0, false)
 	highlight(give_up_button)
-	await give_up_button.pressed
-	unhighlight()
-	give_up_layer.enable()
+	give_up_button.pressed.connect(unhighlight)
 	give_up_layer.pressed.connect(_marker_layer)
 
 
 func _marker_layer() -> void:
+	unhighlight()
 	actual_level.show()
 	hint_button.hide()
 	validate_button.hide()
