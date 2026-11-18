@@ -111,4 +111,6 @@ func end_level(_solved: bool = true) -> void:
 	give_up_button.queue_free()
 
 func _on_validate_button_pressed() -> void:
-	pass
+	if is_correct():
+		for person: Person in persons: 
+			person.reveal_guilty(true)
