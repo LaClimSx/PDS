@@ -68,11 +68,15 @@ func validate() -> void:
 			person.reveal_guilty(true)
 		end_level()
 	else: 
+		$PanelContainer/HBoxContainer.hide()
+		for person: Person in persons:
+			person.reset_markers()
 		var incorrect_popup : MerlinPopup = new_popup("It appears you made at least one mistake, care to try again?", 440, false)
 		incorrect_popup.set_button_text("Try again")
 		await incorrect_popup.pressed
 		%RightSide.show()
 		%ValidateButton.disabled = false
+		$PanelContainer/HBoxContainer.show()
 		stopped = false
 
 
