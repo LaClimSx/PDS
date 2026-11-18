@@ -15,6 +15,7 @@ var highlight_target: Control
 func _ready() -> void:
 	super()
 	$Start.show()
+	$Hint1.hide()
 
 func _process(_delta: float) -> void:
 	if highlight_frame and is_instance_valid(highlight_target):
@@ -78,7 +79,11 @@ func _hint_layer() -> void:
 		highlight(hint_button)
 		await hint_button.pressed
 		await %HintButtonContainer.pressed
+		if Global.VERSION == Global.Version.ITS or Global.VERSION == Global.Version.ALL:
+			$Hint1.show()
+			%HintButtonContainer.pressed.connect(func(_x:int) -> void : $Hint1.hide())
 		unhighlight()
+		
 		hint_layer.set_label_text(ready_text)
 	hint_layer.enable()
 
