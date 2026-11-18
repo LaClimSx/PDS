@@ -54,6 +54,7 @@ func _on_validate_button_pressed() -> void:
 
 func validate() -> void:
 	nb_tries += 1
+	%TriesCounter.text = "Tries: " + str(nb_tries + 1)
 	%RightSide.hide()
 	%ValidateButton.disabled = true
 	if is_correct():
