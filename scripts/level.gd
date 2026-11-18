@@ -12,6 +12,8 @@ class_name Level
 @onready var hint_text: RichTextLabel = %HintText
 
 const TWO_BUTTON_PANEL : PackedScene = preload("res://scenes/two_button_panel.tscn")
+const MERLIN_POPUP : PackedScene = preload("res://scenes/merlin_popup.tscn")
+
 
 var time_passed: float = 0.0
 var stopped: bool = false
@@ -19,7 +21,7 @@ var stopped: bool = false
 var nb_tries: int = 0
 
 func _ready() -> void:
-	$DebugLabel.text = "Debug label: VERSION = " + str(Global.VERSION)
+	$DebugLabel.text = "Debug label: VERSION = " + str(Global.VERSION) + "\n" + name
 	%LiarLabel.text = "Find the 1 liar" if liar_quantity == 1 else "Find the " + str(liar_quantity) + " liars" 
 	%HintButtonContainer.visible = false
 	%HintButtonContainer.create(Global.VERSION)
@@ -52,10 +54,8 @@ func _on_validate_button_pressed() -> void:
 
 func validate() -> void:
 	nb_tries += 1
-	var hint_button_visibilty : bool = %HintButton.visible
-	var hint_container_visibility : bool = %HintButtonContainer.visible
-	%HintButton.visible = false
-	%HintButtonContainer.visible = false
+	%RightSide.hide()
+	%ValidateButton.disabled = true
 	var correct: bool = true
 	var idx: int = 0
 	for person: Person in persons:
@@ -68,10 +68,21 @@ func validate() -> void:
 			person.reveal_guilty(true)
 		end_level()
 	else: 
-		print("You made at least one mistake")
-		%HintButton.visible = hint_button_visibilty
-		%HintButtonContainer.visible = hint_container_visibility
+		var incorrect_popup : MerlinPopup = new_popup("It appears you made at least one mistake, care to try again?", 440, false)
+		incorrect_popup.set_button_text("Try again")
+		await incorrect_popup.pressed
+		%RightSide.show()
+		%ValidateButton.disabled = false
 		stopped = false
+
+
+func new_popup(text: String, separation: int = 425, disable_default: bool = true) -> MerlinPopup:
+	var layer: MerlinPopup = MERLIN_POPUP.instantiate()
+	layer.create(text, separation)
+	add_child(layer)
+	if disable_default: 
+		layer.disable()
+	return layer
 
 
 func resume() -> void:
@@ -80,11 +91,12 @@ func resume() -> void:
 
 func end_level(solved: bool = true) -> void:
 	if solved:
-		print("congrats")
+		var end_popup : MerlinPopup = new_popup("Congrats, you found all the shapeshifters, ready for the next level?", 440, false)
+		end_popup.set_button_text("Next Level")
+		end_popup.pressed.connect(Global.next_level)
 	else:
 		print("given up huh ?")
-	#TODO: level transitions
-	Global.next_level()
+		Global.next_level()
 
 
 #HINTS
@@ -138,3 +150,10 @@ func idx_to_position(idx: int, nb_columns: int = grid_container.columns) -> Stri
 	var column_str : String = String.chr(65 + (idx % nb_columns))
 	@warning_ignore("integer_division")
 	return column_str + str((idx / nb_columns) + 1)
+
+#God mode to go to next level when clicking on debug label
+func _on_debug_label_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			accept_event()
+			Global.next_level()

@@ -17,6 +17,7 @@ var VERSION: Version
 func _ready() -> void:
 	VERSION = rng.randi_range(0, 3) as Version
 
+
 func next_level() -> void:
 	if current_level < NB_OF_LEVELS:
 		current_level += 1

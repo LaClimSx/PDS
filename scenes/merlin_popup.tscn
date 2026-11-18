@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cvrcbsokn46j1"]
 
-[ext_resource type="Texture2D" uid="uid://c8yoij8csxiop" path="res://assets/art/merlin_fit.png" id="1_43hsx"]
-[ext_resource type="Script" uid="uid://dhfdijp4cjsel" path="res://scripts/tuto_layer.gd" id="1_gnup4"]
-[ext_resource type="Theme" uid="uid://dswlx0k1a324t" path="res://assets/theme.tres" id="3_r3jyr"]
+[ext_resource type="Theme" uid="uid://dswlx0k1a324t" path="res://assets/theme.tres" id="1_0g7yh"]
+[ext_resource type="Script" uid="uid://dhfdijp4cjsel" path="res://scripts/merlin_popup.gd" id="2_0g7yh"]
+[ext_resource type="Texture2D" uid="uid://c8yoij8csxiop" path="res://assets/art/merlin_fit.png" id="3_4iqx1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yvjhm"]
 
@@ -14,14 +14,15 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[node name="TutoLayer" type="PanelContainer" unique_id=1699813564]
+[node name="MerlinPopup" type="PanelContainer" unique_id=1699813564]
 offset_right = 1920.0
 offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("1_0g7yh")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_yvjhm")
-script = ExtResource("1_gnup4")
+script = ExtResource("2_0g7yh")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1779829617]
 layout_mode = 2
@@ -31,7 +32,7 @@ theme_override_constants/separation = 425
 [node name="Merlin" type="TextureRect" parent="HBoxContainer" unique_id=96672348]
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("1_43hsx")
+texture = ExtResource("3_4iqx1")
 stretch_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=382816657]
@@ -66,7 +67,6 @@ custom_minimum_size = Vector2(238, 79)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("3_r3jyr")
 theme_override_colors/font_disabled_color = Color(0.64705884, 0.64705884, 0.64705884, 1)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/disabled = SubResource("StyleBoxFlat_r3jyr")

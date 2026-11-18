@@ -26,7 +26,7 @@ theme = ExtResource("1_mx8sn")
 script = ExtResource("1_w7c3h")
 point_persons = [NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person"), NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person4")]
 teach_text = "If there are more people than liars that give the same piece of information, it has to be true."
-bottom_out_text = "A1 and B2 both give the same information, and since there is only one liar, at least one of them must say the truth, so B2 is lying."
+bottom_out_text = "A1 and B2 both give the same information, and since there is only one liar, at least one of them must say the truth, so B1 is lying."
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1538312828]
 layout_mode = 1
@@ -99,6 +99,7 @@ layout_mode = 2
 text = "My top neighbor is lying"
 
 [node name="ValidateButton" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=778961792]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Validate"
@@ -110,18 +111,19 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer2" unique_id=1701171862]
+[node name="RightSide" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer2" unique_id=1701171862]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="TopSpacing" type="Control" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=1949993103]
+[node name="TopSpacing" type="Control" parent="PanelContainer/HBoxContainer/MarginContainer2/RightSide" unique_id=1949993103]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HintButton" type="TextureButton" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=872392301]
+[node name="HintButton" type="TextureButton" parent="PanelContainer/HBoxContainer/MarginContainer2/RightSide" unique_id=872392301]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(450, 80)
 layout_mode = 2
@@ -132,18 +134,18 @@ texture_pressed = ExtResource("6_b121j")
 texture_hover = ExtResource("7_8c41q")
 texture_focused = ExtResource("7_8c41q")
 
-[node name="HintButtonContainer" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=159451774 instance=ExtResource("8_t1rx8")]
+[node name="HintButtonContainer" parent="PanelContainer/HBoxContainer/MarginContainer2/RightSide" unique_id=159451774 instance=ExtResource("8_t1rx8")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="BottomSpacing" type="Control" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=718286913]
+[node name="BottomSpacing" type="Control" parent="PanelContainer/HBoxContainer/MarginContainer2/RightSide" unique_id=718286913]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HintText" type="RichTextLabel" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/BottomSpacing" unique_id=2055426040]
+[node name="HintText" type="RichTextLabel" parent="PanelContainer/HBoxContainer/MarginContainer2/RightSide/BottomSpacing" unique_id=2055426040]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(450, 0)
+custom_minimum_size = Vector2(450, 800)
 custom_maximum_size = Vector2(460, -1)
 layout_mode = 1
 anchors_preset = 5
@@ -181,10 +183,12 @@ offset_left = 1486.0
 offset_top = 20.0
 offset_right = 1847.0
 offset_bottom = 58.0
+mouse_filter = 0
 theme_override_font_sizes/font_size = 32
 text = "Debug label: VERSION = "
 
 [connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/ValidateButton" to="." method="_on_validate_button_pressed"]
-[connection signal="pressed" from="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/HintButton" to="." method="_on_hint_button_pressed"]
-[connection signal="pressed" from="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/HintButtonContainer" to="." method="asked_for_hint"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/MarginContainer2/RightSide/HintButton" to="." method="_on_hint_button_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/MarginContainer2/RightSide/HintButtonContainer" to="." method="asked_for_hint"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/GiveUpButton" to="." method="end_level" binds= [false]]
+[connection signal="gui_input" from="DebugLabel" to="." method="_on_debug_label_gui_input"]

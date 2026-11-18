@@ -1,7 +1,6 @@
 extends Level
 
 const HIGHLIGHT_FRAME : PackedScene = preload("res://scenes/highlight_frame.tscn")
-const TUTO_LAYER : PackedScene = preload("res://scenes/tuto_layer.tscn")
 
 var highlight_frame: Panel    
 var highlight_target: Control
@@ -21,20 +20,11 @@ func _process(_delta: float) -> void:
 	if highlight_frame and is_instance_valid(highlight_target):
 		_update_frame()
 
-
-func new_layer(text: String, separation: int = 425, disable_default: bool = true) -> TutoLayer:
-	var layer: TutoLayer = TUTO_LAYER.instantiate()
-	layer.create(text, separation)
-	add_child(layer)
-	if disable_default: 
-		layer.disable()
-	return layer
-
 #How to give up
 func _on_start_button_pressed() -> void:
 	$Start.queue_free()
 	actual_level.hide()
-	var give_up_layer : TutoLayer = new_layer("First, know you can give up a level anytime by clicking on the \"Give up\" button.",
+	var give_up_layer : MerlinPopup = new_popup("First, know you can give up a level anytime by clicking on the \"Give up\" button.",
 	0, true)
 	highlight(give_up_button)
 	await give_up_button.pressed
@@ -47,7 +37,7 @@ func _marker_layer() -> void:
 	actual_level.show()
 	hint_button.hide()
 	validate_button.hide()
-	var marker_layer : TutoLayer = new_layer("Use the rounded markers to write down useful info")
+	var marker_layer : MerlinPopup = new_popup("Use the rounded markers to write down useful info")
 	highlight(marker_button)
 	await marker_button.pressed
 	await marker_button.pressed
@@ -59,7 +49,7 @@ func _marker_layer() -> void:
 
 
 func _bookmark_layer() -> void:
-	var bookmark_layer : TutoLayer = new_layer("Check these bookmarks to flag all liars")
+	var bookmark_layer : MerlinPopup = new_popup("Check these bookmarks to flag all liars")
 	highlight(bookmark_button)
 	await bookmark_button.pressed
 	unhighlight()
@@ -69,7 +59,7 @@ func _bookmark_layer() -> void:
 
 func _validate_layer() -> void:
 	validate_button.show()
-	var validate_layer: TutoLayer = new_layer("Once you found all the liars, click \"Validate\" to check your answer")
+	var validate_layer: MerlinPopup = new_popup("Once you found all the liars, click \"Validate\" to check your answer")
 	highlight(validate_button)
 	await validate_button.pressed
 	unhighlight()
@@ -80,11 +70,11 @@ func _validate_layer() -> void:
 
 func _hint_layer() -> void:
 	var ready_text: String = "You are now ready for your first level!"
-	var hint_layer: TutoLayer = new_layer(ready_text) if Global.VERSION == Global.Version.NO_HELP else new_layer("If you ever get stuck, don't hesitate to ask me for a bit of help!")
-	hint_layer.align_bottom()
+	var hint_layer: MerlinPopup = new_popup(ready_text) if Global.VERSION == Global.Version.NO_HELP else new_popup("If you ever get stuck, don't hesitate to ask me for a bit of help!")
 	hint_layer.set_button_text("Play")
 	hint_layer.pressed.connect(Global.next_level)
 	if Global.VERSION != Global.Version.NO_HELP:
+		hint_layer.align_bottom()
 		hint_button.show()
 		highlight(hint_button)
 		await hint_button.pressed

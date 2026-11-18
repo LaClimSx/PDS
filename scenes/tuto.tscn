@@ -36,9 +36,6 @@ text = "My top neighbor is lying"
 color = 2
 text = "All witches lie"
 
-[node name="ValidateButton" parent="PanelContainer/HBoxContainer/VBoxContainer" parent_id_path=PackedInt32Array(1446626616) index="2" unique_id=778961792]
-unique_name_in_owner = true
-
 [node name="GiveUpButton" parent="PanelContainer/MarginContainer" parent_id_path=PackedInt32Array(912778932) index="0" unique_id=1856128174]
 unique_name_in_owner = true
 
@@ -77,11 +74,11 @@ alignment = 1
 custom_minimum_size = Vector2(950, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "Welcome to FindName Game !
+text = "Welcome to FindNameGame!
 
 Our kingdom is being invaded by shapeshifters who always tell lies.
 
-Will you be able to catch all liars ?
+Will you be able to catch all liars?
 "
 horizontal_alignment = 1
 vertical_alignment = 1

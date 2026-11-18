@@ -7,7 +7,7 @@
 liar_quantity = 2
 point_persons = [NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person"), NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person2"), NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person6")]
 teach_text = "If more people than there are liars agree on some information, that information has to be correct."
-bottom_out_text = "A1, B1 and C2 all agree on the status of B2, so B2 must tell the truth. This means B3 is our first liar, clearing C3. If C3 tells the truth, so do all witches, and thus also all wizards thanks to A1. The only person left whose innocence cannot be infered is B2, who must lie."
+bottom_out_text = "A1, B1 and C2 all agree on the status of B2, so B2 must tell the truth. This means B3 is our first liar, clearing C3. If C3 tells the truth, so do all witches, and thus also all wizards thanks to A1. The only person left whose innocence cannot be infered is C2, who must lie."
 
 [node name="GridContainer" parent="PanelContainer/HBoxContainer/VBoxContainer" parent_id_path=PackedInt32Array(1446626616) index="1" unique_id=1456320327]
 columns = 3

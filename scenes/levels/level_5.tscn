@@ -3,7 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://de2w83gncyih3" path="res://scenes/levels/level.tscn" id="1_845dy"]
 [ext_resource type="PackedScene" uid="uid://b2qmulxjiaky" path="res://scenes/person.tscn" id="2_dswqx"]
 
-[node name="Level5" unique_id=1153732440 instance=ExtResource("1_845dy")]
+[node name="Level5" unique_id=1153732440 node_paths=PackedStringArray("point_persons") instance=ExtResource("1_845dy")]
+point_persons = [NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person4"), NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person6")]
+teach_text = "If there are more people than liars that agree on the same piece of information, it has to be true."
+bottom_out_text = "A2 and C2 both agree that A2 tells the truth. Since there is only one liar, it must be true. So all wizards tell the truth. Thus the liar is a neighbor of B3. If all of B3's non-neighbors tell the truth (i.e. row 1), then the only possible liar is C3."
 
 [node name="GridContainer" parent="PanelContainer/HBoxContainer/VBoxContainer" parent_id_path=PackedInt32Array(1446626616) index="1" unique_id=1456320327]
 columns = 3

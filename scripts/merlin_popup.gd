@@ -1,5 +1,5 @@
 extends PanelContainer
-class_name TutoLayer
+class_name MerlinPopup
 
 signal pressed
 

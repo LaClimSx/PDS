@@ -23,3 +23,6 @@ text = "At least one oracle lies"
 color = 1
 is_liar = true
 text = "No oracle lies"
+
+[node name="HintText" parent="PanelContainer/HBoxContainer/MarginContainer2/RightSide/BottomSpacing" parent_id_path=PackedInt32Array(718286913) index="0" unique_id=2055426040]
+offset_bottom = 0.0
