@@ -19,4 +19,5 @@ first_texture = ExtResource("3_ieukf")
 second_texture = ExtResource("4_r7rcd")
 third_texture = ExtResource("5_70p8q")
 
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]

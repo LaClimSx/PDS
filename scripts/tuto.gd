@@ -15,6 +15,7 @@ var highlight_target: Control
 func _ready() -> void:
 	super()
 	$Start.show()
+	$Hint1.hide()
 
 func _process(_delta: float) -> void:
 	if highlight_frame and is_instance_valid(highlight_target):
@@ -25,19 +26,18 @@ func _on_start_button_pressed() -> void:
 	$Start.queue_free()
 	actual_level.hide()
 	var give_up_layer : MerlinPopup = new_popup("First, know you can give up a level anytime by clicking on the \"Give up\" button.",
-	0, true)
+	0, false)
 	highlight(give_up_button)
-	await give_up_button.pressed
-	unhighlight()
-	give_up_layer.enable()
+	give_up_button.pressed.connect(unhighlight)
 	give_up_layer.pressed.connect(_marker_layer)
 
 
 func _marker_layer() -> void:
+	unhighlight()
 	actual_level.show()
 	hint_button.hide()
 	validate_button.hide()
-	var marker_layer : MerlinPopup = new_popup("Use the rounded markers to write down useful info")
+	var marker_layer : MerlinPopup = new_popup("Use the rounded markers to write down useful info. Right click to reset a marker.")
 	highlight(marker_button)
 	await marker_button.pressed
 	await marker_button.pressed
@@ -79,7 +79,11 @@ func _hint_layer() -> void:
 		highlight(hint_button)
 		await hint_button.pressed
 		await %HintButtonContainer.pressed
+		if Global.VERSION == Global.Version.ITS or Global.VERSION == Global.Version.ALL:
+			$Hint1.show()
+			%HintButtonContainer.pressed.connect(func(_x:int) -> void : $Hint1.hide())
 		unhighlight()
+		
 		hint_layer.set_label_text(ready_text)
 	hint_layer.enable()
 
@@ -111,4 +115,6 @@ func end_level(_solved: bool = true) -> void:
 	give_up_button.queue_free()
 
 func _on_validate_button_pressed() -> void:
-	pass
+	if is_correct():
+		for person: Person in persons: 
+			person.reveal_guilty(true)

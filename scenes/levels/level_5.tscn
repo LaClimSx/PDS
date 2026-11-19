@@ -44,9 +44,9 @@ text = "I am a truth-teller"
 [node name="Person8" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="7" unique_id=1837874682 instance=ExtResource("2_dswqx")]
 layout_mode = 2
 color = 2
-text = "One of my neighbor is a liar"
+text = "One of my neighbors is a liar"
 
 [node name="Person9" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="8" unique_id=49218740 instance=ExtResource("2_dswqx")]
 layout_mode = 2
 is_liar = true
-text = "One of my neighbor is a liar"
+text = "One of my neighbors is a liar"

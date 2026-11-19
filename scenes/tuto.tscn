@@ -17,7 +17,7 @@ point_persons = [NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContai
 teach_text = "If someone says something contradictory, they must be lying."
 bottom_out_text = "A1 says something obviously false, so they are lying."
 
-[node name="Stopwatch" parent="PanelContainer/HBoxContainer/MarginContainer" parent_id_path=PackedInt32Array(1529071435) index="0" unique_id=188592079]
+[node name="Stopwatch" parent="PanelContainer/HBoxContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1213173831) index="1" unique_id=188592079]
 visible = false
 
 [node name="Person" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" parent_id_path=PackedInt32Array(1456320327) index="0" unique_id=1970352386]
@@ -40,6 +40,7 @@ text = "All witches lie"
 unique_name_in_owner = true
 
 [node name="Start" type="PanelContainer" parent="." index="2" unique_id=1921642128]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -100,5 +101,17 @@ size_flags_vertical = 4
 texture_normal = ExtResource("4_kisrk")
 texture_pressed = ExtResource("5_onjet")
 texture_hover = ExtResource("6_ser3y")
+
+[node name="Hint1" type="Label" parent="." index="3" unique_id=1809272777]
+visible = false
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 0
+offset_left = 1311.0
+offset_top = 614.0
+offset_right = 1761.0
+offset_bottom = 683.0
+theme_override_font_sizes/font_size = 28
+text = "Highlighted persons give useful information to advance"
+autowrap_mode = 3
 
 [connection signal="pressed" from="Start/HBoxContainer/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

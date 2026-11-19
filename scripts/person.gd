@@ -67,3 +67,8 @@ func reveal_guilty(correct_guess: bool) -> void:
 				texture_rect.texture = yellow_liar_texture
 			ColorGroup.BLUE:
 				texture_rect.texture = blue_liar_texture
+
+
+func reset_markers() -> void:
+	marker_button.reset()
+	bookmark_button.button_pressed = false

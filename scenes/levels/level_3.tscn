@@ -8,7 +8,7 @@ teach_text = "If someone says there is a liar in a group they belong to, they ha
 bottom_out_text = "A2 says there is a liar in their row. If they were lying, it would be a contradiction. So, the information is true, they tell the truth and B2 is a liar. "
 
 [node name="Person" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" parent_id_path=PackedInt32Array(1456320327) index="0" unique_id=1970352386]
-text = "My bottom neighbor is telling the truthhbor is lying"
+text = "My bottom neighbor is telling the truth"
 
 [node name="Person2" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" parent_id_path=PackedInt32Array(1456320327) index="1" unique_id=955561553]
 is_liar = false

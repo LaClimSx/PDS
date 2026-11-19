@@ -54,8 +54,27 @@ func _on_validate_button_pressed() -> void:
 
 func validate() -> void:
 	nb_tries += 1
+	%TriesCounter.text = "Tries: " + str(nb_tries + 1)
 	%RightSide.hide()
 	%ValidateButton.disabled = true
+	if is_correct():
+		for person: Person in persons: 
+			person.reveal_guilty(true)
+		end_level()
+	else: 
+		$PanelContainer/HBoxContainer.hide()
+		for person: Person in persons:
+			person.reset_markers()
+		var incorrect_popup : MerlinPopup = new_popup("It appears you made at least one mistake, care to try again?", 440, false)
+		incorrect_popup.set_button_text("Try again")
+		await incorrect_popup.pressed
+		%RightSide.show()
+		%ValidateButton.disabled = false
+		$PanelContainer/HBoxContainer.show()
+		stopped = false
+
+
+func is_correct() -> bool:
 	var correct: bool = true
 	var idx: int = 0
 	for person: Person in persons:
@@ -63,19 +82,9 @@ func validate() -> void:
 			print("Incorrect for person:", idx_to_position(idx))
 			correct = false
 		idx += 1
-	if correct:
-		for person: Person in persons: 
-			person.reveal_guilty(true)
-		end_level()
-	else: 
-		var incorrect_popup : MerlinPopup = new_popup("It appears you made at least one mistake, care to try again?", 440, false)
-		incorrect_popup.set_button_text("Try again")
-		await incorrect_popup.pressed
-		%RightSide.show()
-		%ValidateButton.disabled = false
-		stopped = false
-
-
+	return correct
+	
+	
 func new_popup(text: String, separation: int = 425, disable_default: bool = true) -> MerlinPopup:
 	var layer: MerlinPopup = MERLIN_POPUP.instantiate()
 	layer.create(text, separation)
@@ -129,6 +138,7 @@ func point_hint() -> void:
 		p.highlight()
 
 func teach_hint() -> void:
+	%TopSpacing.size_flags_vertical = SIZE_SHRINK_BEGIN
 	edit_hint_text(teach_text)
 
 
