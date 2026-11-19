@@ -28,6 +28,7 @@ enum ColorGroup {
 @onready var highlight_stylebox : StyleBoxFlat = preload("res://assets/highlight_stylebox.tres")
 @onready var liar_stylebox : StyleBoxFlat = preload("res://assets/liar_stylebox.tres")
 @onready var innocent_stylebox : StyleBoxFlat = preload("res://assets/innocent_stylebox.tres")
+@onready var default_stylebox: StyleBoxFlat = preload("res://assets/default_person_stylebox.tres")
 
 
 func init_person() -> void:
@@ -40,19 +41,24 @@ func init_person() -> void:
 			texture_rect.texture = blue_texture
 	info_label.text = text
 
+
 func _ready() -> void:
 	%IndexLabel.visible = false
 	init_person()
 
+
 func is_guess_correct() -> bool:
 	return (bookmark_button.button_pressed and is_liar or not bookmark_button.button_pressed and not is_liar)
+
 
 func highlight() -> void:
 	add_theme_stylebox_override("panel", highlight_stylebox)
 
+
 func show_index(idx: String) -> void:
 	%IndexLabel.text = idx
 	%IndexLabel.visible = true
+
 
 func reveal_guilty(correct_guess: bool) -> void:
 	if not correct_guess:
@@ -72,3 +78,7 @@ func reveal_guilty(correct_guess: bool) -> void:
 func reset_markers() -> void:
 	marker_button.reset()
 	bookmark_button.button_pressed = false
+
+
+func reset_highlight() -> void:
+	add_theme_stylebox_override("panel", default_stylebox)

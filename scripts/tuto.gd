@@ -34,6 +34,7 @@ func _on_start_button_pressed() -> void:
 
 func _marker_layer() -> void:
 	unhighlight()
+	if give_up_button: give_up_button.queue_free()
 	actual_level.show()
 	hint_button.hide()
 	validate_button.hide()
@@ -69,6 +70,8 @@ func _validate_layer() -> void:
 
 
 func _hint_layer() -> void:
+	for person: Person in persons:
+		person.reset_highlight()
 	var ready_text: String = "You are now ready for your first level!"
 	var hint_layer: MerlinPopup = new_popup(ready_text) if Global.VERSION == Global.Version.NO_HELP else new_popup("If you ever get stuck, don't hesitate to ask me for a bit of help!")
 	hint_layer.set_button_text("Play")

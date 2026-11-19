@@ -2,23 +2,11 @@
 
 [ext_resource type="Script" uid="uid://qrvqgpqu80p0" path="res://scripts/person.gd" id="1_5dovg"]
 [ext_resource type="Theme" uid="uid://dswlx0k1a324t" path="res://assets/theme.tres" id="1_pfaeq"]
+[ext_resource type="StyleBox" uid="uid://do62mculgl3sf" path="res://assets/default_person_stylebox.tres" id="2_2jjoq"]
 [ext_resource type="Texture2D" uid="uid://buu2wmic8hq26" path="res://assets/art/cards/innocent.png" id="2_526uv"]
 [ext_resource type="Texture2D" uid="uid://bk8mwa517oxo" path="res://assets/art/cards/redCard.png" id="2_jf287"]
 [ext_resource type="PackedScene" uid="uid://c7s1h5dbmakdf" path="res://scenes/marker_button.tscn" id="3_jf287"]
 [ext_resource type="Texture2D" uid="uid://dawpner8wcv8l" path="res://assets/art/cards/liar.png" id="3_yhvuw"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8iemx"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0.8, 0.8, 0.8, 0)
-border_blend = true
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dnsif"]
 
@@ -31,7 +19,7 @@ corner_radius_bottom_left = 20
 offset_right = 80.0
 offset_bottom = 288.0
 theme = ExtResource("1_pfaeq")
-theme_override_styles/panel = SubResource("StyleBoxFlat_8iemx")
+theme_override_styles/panel = ExtResource("2_2jjoq")
 script = ExtResource("1_5dovg")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1700634433]
