@@ -51,4 +51,5 @@ text = "My top neighbor tells the truth"
 
 [node name="Person9" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="8" unique_id=1436297446 instance=ExtResource("2_r3i3p")]
 layout_mode = 2
+color = 2
 text = "There is at least one lying witch"
