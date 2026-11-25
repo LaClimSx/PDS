@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://d561samvcp3w"]
+
+[ext_resource type="PackedScene" uid="uid://de2w83gncyih3" path="res://scenes/levels/level.tscn" id="1_vmkp1"]
+[ext_resource type="PackedScene" uid="uid://b2qmulxjiaky" path="res://scenes/person.tscn" id="2_w6h2s"]
+
+[node name="Level4" unique_id=1153732440 node_paths=PackedStringArray("point_persons") instance=ExtResource("1_vmkp1")]
+point_persons = [NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person3"), NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person7")]
+bottom_out_text = "C1 and A3 give the same information, and since there is only one liar, at least one of them must be innocent and tell the truth. This means all witches tell the truth, so C3 tells the truth, leaving only A1 as possible liar with simple deductions."
+
+[node name="GridContainer" parent="PanelContainer/HBoxContainer/VBoxContainer" parent_id_path=PackedInt32Array(1446626616) index="1" unique_id=1456320327]
+columns = 3
+
+[node name="Person" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="0" unique_id=1970352386]
+color = 2
+is_liar = true
+text = "Every wizard is a truth-teller"
+
+[node name="Person2" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="1" unique_id=955561553]
+is_liar = false
+text = "No oracle is a liar"
+
+[node name="Person3" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="2" unique_id=301645523]
+color = 0
+text = "Every witch is a truth-teller"
+
+[node name="Person4" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="3" unique_id=1899548976]
+text = "I am a truth-teller"
+
+[node name="Person5" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="4" unique_id=1578394803 instance=ExtResource("2_w6h2s")]
+layout_mode = 2
+color = 1
+text = "No oracle is a liar"
+
+[node name="Person6" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="5" unique_id=276044851 instance=ExtResource("2_w6h2s")]
+layout_mode = 2
+color = 2
+text = "One wizard is lying"
+
+[node name="Person7" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="6" unique_id=312033789 instance=ExtResource("2_w6h2s")]
+layout_mode = 2
+text = "Every witch is a truth-teller"
+
+[node name="Person8" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="7" unique_id=1529108388 instance=ExtResource("2_w6h2s")]
+layout_mode = 2
+color = 2
+text = "This row only has truth-tellers"
+
+[node name="Person9" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="8" unique_id=2076444613 instance=ExtResource("2_w6h2s")]
+layout_mode = 2
+text = "All my neighbors are truth-tellers"

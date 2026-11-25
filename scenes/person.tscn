@@ -11,7 +11,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dnsif"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbigs"]
-bg_color = Color(0, 0, 0, 0.50980395)
+bg_color = Color(0, 0, 0, 0.57254905)
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
@@ -56,6 +56,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/line_spacing = 2
+theme_override_font_sizes/font_size = 20
 text = "Everyone in this column tells the truth."
 horizontal_alignment = 1
 vertical_alignment = 2
