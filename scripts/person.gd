@@ -1,15 +1,15 @@
 extends PanelContainer 
 class_name Person
 
-enum ColorGroup {
-	RED,
-	GREEN,
-	BLUE,
+enum Group {
+	WITCH,
+	ORACLE,
+	WIZARD,
 }
 
 
-@export var color: ColorGroup
-@export var is_liar: bool = false
+@export var group: Group
+@export var is_shapeshifter: bool = false
 @export var text : String
 
 @onready var texture_rect : TextureRect = %TextureRect
@@ -32,12 +32,12 @@ enum ColorGroup {
 
 
 func init_person() -> void:
-	match color:
-		ColorGroup.RED:
+	match group:
+		Group.WITCH:
 			texture_rect.texture = red_texture
-		ColorGroup.GREEN:
+		Group.ORACLE:
 			texture_rect.texture = yellow_texture
-		ColorGroup.BLUE:
+		Group.WIZARD:
 			texture_rect.texture = blue_texture
 	info_label.text = text
 
@@ -48,7 +48,7 @@ func _ready() -> void:
 
 
 func is_guess_correct() -> bool:
-	return (bookmark_button.button_pressed and is_liar or not bookmark_button.button_pressed and not is_liar)
+	return (bookmark_button.button_pressed and is_shapeshifter or not bookmark_button.button_pressed and not is_shapeshifter)
 
 
 func highlight() -> void:
@@ -65,13 +65,13 @@ func reveal_guilty(correct_guess: bool) -> void:
 		add_theme_stylebox_override("panel", liar_stylebox)
 	else:
 		add_theme_stylebox_override("panel", innocent_stylebox)
-	if is_liar:
-		match color:
-			ColorGroup.RED:
+	if is_shapeshifter:
+		match group:
+			Group.WITCH:
 				texture_rect.texture = red_liar_texture
-			ColorGroup.GREEN:
+			Group.ORACLE:
 				texture_rect.texture = yellow_liar_texture
-			ColorGroup.BLUE:
+			Group.WIZARD:
 				texture_rect.texture = blue_liar_texture
 
 

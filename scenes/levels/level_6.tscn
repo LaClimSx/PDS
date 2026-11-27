@@ -5,8 +5,8 @@
 
 [node name="Level6" unique_id=1153732440 node_paths=PackedStringArray("point_persons") instance=ExtResource("1_y2agi")]
 liar_quantity = 2
-point_persons = [NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person2"), NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person7")]
-teach_text = "If two people contradict each other, then at least one of them lies."
+point_persons = [NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person6"), NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person9")]
+teach_text = "If a person says  someone else is a truth-teller, they must have the same role."
 bottom_out_text = "B1 and A3 say completely opposite statements, so they must have opposite roles. C2 and C3 clear each other, so they have the same role. They cannot both lie, so they are innocent. A2 has to tell the truth otherwise it would create a contradiction, so the liar in this row is inevitably B2. We know the other liar has to be B1 or A3, so everyone else is innocent, especially B3, who implies that B1 is the second liar."
 
 [node name="GridContainer" parent="PanelContainer/HBoxContainer/VBoxContainer" parent_id_path=PackedInt32Array(1446626616) index="1" unique_id=1456320327]
@@ -19,31 +19,31 @@ text = "I have at least 1 neighbor that is lying"
 text = "There is at least one wizard who lies"
 
 [node name="Person3" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="2" unique_id=301645523]
-color = 1
+group = 1
 text = "I am telling the truth"
 
 [node name="Person4" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="3" unique_id=1899548976]
-color = 2
+group = 2
 text = "This row contains at least one liar"
 
 [node name="Person5" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="4" unique_id=670497829 instance=ExtResource("2_g44gb")]
 layout_mode = 2
-is_liar = true
+is_shapeshifter = true
 text = "At least two of my neighbors are lying"
 
 [node name="Person6" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="5" unique_id=1297141009 instance=ExtResource("2_g44gb")]
 layout_mode = 2
-color = 2
+group = 2
 text = "My bottom neighbor is telling the truth"
 
 [node name="Person7" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="6" unique_id=412320432 instance=ExtResource("2_g44gb")]
 layout_mode = 2
-color = 2
+group = 2
 text = "There is no wizard that lies"
 
 [node name="Person8" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="7" unique_id=74820169 instance=ExtResource("2_g44gb")]
 layout_mode = 2
-color = 1
+group = 1
 text = "There are as many witch truth-tellers as oracles"
 
 [node name="Person9" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="8" unique_id=1436297446 instance=ExtResource("2_g44gb")]

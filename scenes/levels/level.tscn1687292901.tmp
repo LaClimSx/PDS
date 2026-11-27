@@ -85,13 +85,13 @@ text = "My right neighbor is lying"
 
 [node name="Person2" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=955561553 instance=ExtResource("1_2q6dc")]
 layout_mode = 2
-color = 1
-is_liar = true
+group = 1
+is_shapeshifter = true
 text = "My bottom-left neighbor is lying"
 
 [node name="Person3" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=301645523 instance=ExtResource("1_2q6dc")]
 layout_mode = 2
-color = 2
+group = 2
 text = "Everyone in this column tells the truth"
 
 [node name="Person4" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" unique_id=1899548976 instance=ExtResource("1_2q6dc")]

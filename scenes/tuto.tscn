@@ -23,19 +23,19 @@ bottom_out_text = "A1 says something obviously false, so they are lying."
 visible = false
 
 [node name="Person" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" parent_id_path=PackedInt32Array(1456320327) index="0" unique_id=1970352386]
-is_liar = true
+is_shapeshifter = true
 text = "Everyone is lying"
 
 [node name="Person2" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" parent_id_path=PackedInt32Array(1456320327) index="1" unique_id=955561553]
-color = 2
-is_liar = false
+group = 2
+is_shapeshifter = false
 
 [node name="Person3" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" parent_id_path=PackedInt32Array(1456320327) index="2" unique_id=301645523]
-color = 1
+group = 1
 text = "My top neighbor is lying"
 
 [node name="Person4" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" parent_id_path=PackedInt32Array(1456320327) index="3" unique_id=1899548976]
-color = 2
+group = 2
 text = "All witches lie"
 
 [node name="GiveUpButton" parent="PanelContainer/MarginContainer" parent_id_path=PackedInt32Array(912778932) index="0" unique_id=1856128174]

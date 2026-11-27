@@ -16,7 +16,7 @@ columns = 3
 text = "Every wizard tells the truth"
 
 [node name="Person2" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="1" unique_id=955561553]
-is_liar = false
+is_shapeshifter = false
 text = "My bottom neighbor is telling the truth"
 
 [node name="Person3" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="2" unique_id=301645523]
@@ -27,24 +27,24 @@ text = "I am telling the truth"
 
 [node name="Person5" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="4" unique_id=915301478 instance=ExtResource("2_g44gb")]
 layout_mode = 2
-color = 2
+group = 2
 text = "My bottom neighbor is lying"
 
 [node name="Person6" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="5" unique_id=1009988742 instance=ExtResource("2_g44gb")]
 layout_mode = 2
-color = 1
-is_liar = true
+group = 1
+is_shapeshifter = true
 text = "Everyone in this row is telling the truth."
 
 [node name="Person7" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="6" unique_id=1800537642 instance=ExtResource("2_g44gb")]
 layout_mode = 2
-color = 1
+group = 1
 text = "There is at least one liar in this row"
 
 [node name="Person8" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="7" unique_id=1213275467 instance=ExtResource("2_g44gb")]
 layout_mode = 2
-color = 1
-is_liar = true
+group = 1
+is_shapeshifter = true
 text = "My right neighbor is lying"
 
 [node name="Person9" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="8" unique_id=778173886 instance=ExtResource("2_g44gb")]

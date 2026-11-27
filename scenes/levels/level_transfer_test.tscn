@@ -5,25 +5,25 @@
 
 [node name="LevelTransferTest" unique_id=1153732440 node_paths=PackedStringArray("point_persons") instance=ExtResource("1_kg33w")]
 liar_quantity = 2
-point_persons = [NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person4"), NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person7"), NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person9")]
-teach_text = "If more people than there are liars accuse a set of people, then the union of these sets must contain a liar. And if more people than there are remaining liars have the same role are outside that set, they must be innocent."
-bottom_out_text = "This is the final boss. B3 clears B2 so they have the same role, and same for C2 with C3. Then, we can see that A2, A3 and C3 all accuse a set of people of containing a liar. This means the union of these sets must contain one, because at least one of them must be telling the truth. So, at most one liar can be outside of this set. Since C2 and C3 are not included in the set and have the same role, they must be innocent. So, at least one witch lies, and at most one liar is not a witch. Since B2 and B3 have the same role, they must be telling the truth as well. Looking at A3, only one of their neighbors has their role unknown, A2. So either A3 tells the truth and A2 lies, or the opposite. Similarly, the only unknown role from the middle row is A2, so A1 and A2 are opposite. Since A1 is opposite to A2 who is opposite to A3, A1 and A3 have the same role. However, we know that there is a lying witch, and neither A1 nor A3 are witches, so they tell the truth. This gives us A2 as liar, so all of their neighors tell the truth, and the only remaining spot for the second liar is C1."
+point_persons = [NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person")]
+teach_text = "Think about what happens if someone says there is a shapeshifter in their own class. What role(s) could they have?"
+bottom_out_text = "If we inspect A1, we can see they have to be a shapeshifter to avoid creating a contradiction. Next, A2 and B3 have to be innocent, because someone claiming their own innocence has to be innocent, no matter if they lie or tell the truth. This means A3 lies, so they are innocent. If A3 lies, there must be a shapeshifting wizard, so all witches are innocent, and therefore tell the truth. By C1, we know that B1 is innocent, meaning the second shapeshifter is the last wizard, C3."
 
 [node name="GridContainer" parent="PanelContainer/HBoxContainer/VBoxContainer" parent_id_path=PackedInt32Array(1446626616) index="1" unique_id=1456320327]
 columns = 3
 
 [node name="Person" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="0" unique_id=1970352386]
-color = 1
-is_liar = true
+group = 1
+is_shapeshifter = true
 text = "There is at least one shapeshifting oracle"
 
 [node name="Person2" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="1" unique_id=955561553]
-color = 2
-is_liar = false
+group = 2
+is_shapeshifter = false
 text = "There is at least one shapeshifter in this column"
 
 [node name="Person3" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="2" unique_id=301645523]
-color = 0
+group = 0
 text = "My left neighbor is innocent"
 
 [node name="Person4" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="3" unique_id=1899548976]
@@ -31,17 +31,17 @@ text = "There is no shapeshifting witch"
 
 [node name="Person5" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="4" unique_id=670497829 instance=ExtResource("2_4aewn")]
 layout_mode = 2
-color = 1
+group = 1
 text = "There is at least one shapeshifter in this column"
 
 [node name="Person6" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="5" unique_id=1297141009 instance=ExtResource("2_4aewn")]
 layout_mode = 2
-color = 1
+group = 1
 text = "My top neighbor is a shapeshifter"
 
 [node name="Person7" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="6" unique_id=412320432 instance=ExtResource("2_4aewn")]
 layout_mode = 2
-color = 1
+group = 2
 text = "My right neighbor is a shapeshifter"
 
 [node name="Person8" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="7" unique_id=74820169 instance=ExtResource("2_4aewn")]
@@ -50,6 +50,6 @@ text = "There is no shapeshifter in this column"
 
 [node name="Person9" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="8" unique_id=1436297446 instance=ExtResource("2_4aewn")]
 layout_mode = 2
-color = 2
-is_liar = true
+group = 2
+is_shapeshifter = true
 text = "My top neighbor is innocent"
