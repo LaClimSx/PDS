@@ -5,9 +5,9 @@
 
 [node name="Level7" unique_id=1153732440 node_paths=PackedStringArray("point_persons") instance=ExtResource("1_07ctq")]
 liar_quantity = 2
-point_persons = [NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person2"), NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person7")]
-teach_text = "If two people contradict each other, then at least one of them lies."
-bottom_out_text = "B1 and A3 say completely opposite statements, so they must have opposite roles. C2 and C3 clear each other, so they have the same role. They cannot both lie, so they are innocent. A2 has to tell the truth otherwise it would create a contradiction, so the liar in this row is inevitably B2. We know the other liar has to be B1 or A3, so everyone else is innocent, especially B3, who implies that B1 is the second liar."
+point_persons = [NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person2"), NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person3"), NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person4"), NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person5")]
+teach_text = "If there are N liars and N people have the same role, then if you know that there is a liar somewhere else, they must all be innocent."
+bottom_out_text = "C1 clears B1, so they have the same role. A2 and B2 cannot both be saying the truth, so at least one of them lies. Since there are only 2 liars, this means B1 and C1 are innocent. B3 says something that has to be true, so they must be a truth-teller. So, there is a liar in column B, and that liar is B2. This means A3 tells the truth. Also, C2 must be telling the truth so as not to create a contradiction. We can deduce that C3 is a truth-teller as well, meaning there is a lying witch, A2."
 
 [node name="GridContainer" parent="PanelContainer/HBoxContainer/VBoxContainer" parent_id_path=PackedInt32Array(1446626616) index="1" unique_id=1456320327]
 columns = 3
@@ -47,7 +47,7 @@ text = "There is at least one lying wizard"
 [node name="Person8" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="7" unique_id=74820169 instance=ExtResource("2_bl61q")]
 layout_mode = 2
 color = 2
-text = "Someone in this column is lying"
+text = "At least one person in this column is lying"
 
 [node name="Person9" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="8" unique_id=1436297446 instance=ExtResource("2_bl61q")]
 layout_mode = 2

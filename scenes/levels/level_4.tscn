@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://b2qmulxjiaky" path="res://scenes/person.tscn" id="2_w6h2s"]
 
 [node name="Level4" unique_id=1153732440 node_paths=PackedStringArray("point_persons") instance=ExtResource("1_vmkp1")]
-point_persons = [NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person3"), NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person7")]
-bottom_out_text = "C1 and A3 give the same information, and since there is only one liar, at least one of them must be innocent and tell the truth. This means all witches tell the truth, so C3 tells the truth, leaving only A1 as possible liar with simple deductions."
+point_persons = [NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person"), NodePath("PanelContainer/HBoxContainer/VBoxContainer/GridContainer/Person2")]
+teach_text = "When someones accuses someone else of lying, they must have opposite roles."
+bottom_out_text = "A1 accuses B1 of lying, so one of them must be a liar and the other telling the truth. Since there is only one liar, everyone else must be truth-tellers, including A3, who clears A1. So B1 must be the liar."
 
 [node name="GridContainer" parent="PanelContainer/HBoxContainer/VBoxContainer" parent_id_path=PackedInt32Array(1446626616) index="1" unique_id=1456320327]
 columns = 3
