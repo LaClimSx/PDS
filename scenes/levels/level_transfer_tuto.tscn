@@ -8,7 +8,7 @@ teach_text = "Remember, shapeshifters tell the truth now. If someone says they a
 bottom_out_text = "A2 says they are not a shapeshifter. If they were one, it would be a lie, and shapeshifters tell the truth, so they are not a shapeshifter. This means there is a shapeshifting oraclem who tells the truth, and the other two lie. B1 says something true, so they must be a shapeshifter. We can check that if that is the case, the other ones do lie."
 
 [node name="Person" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" parent_id_path=PackedInt32Array(1456320327) index="0" unique_id=1970352386]
-color = 1
+group = 1
 text = "I am a shapeshifter"
 
 [node name="Person2" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" parent_id_path=PackedInt32Array(1456320327) index="1" unique_id=955561553]
@@ -18,7 +18,7 @@ text = "There is no shapeshifting wizard"
 text = "I am not a shapeshifter"
 
 [node name="Person4" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" parent_id_path=PackedInt32Array(1456320327) index="3" unique_id=1899548976]
-color = 1
+group = 1
 text = "My left neighbor is a shapeshifter"
 
 [node name="HintText" parent="PanelContainer/HBoxContainer/MarginContainer2/RightSide/BottomSpacing" parent_id_path=PackedInt32Array(718286913) index="0" unique_id=2055426040]

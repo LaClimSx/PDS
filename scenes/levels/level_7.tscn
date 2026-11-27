@@ -13,43 +13,43 @@ bottom_out_text = "C1 clears B1, so they have the same role. A2 and B2 cannot bo
 columns = 3
 
 [node name="Person" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="0" unique_id=1970352386]
-color = 2
+group = 2
 text = "Everyone in this row tells the truth"
 
 [node name="Person2" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="1" unique_id=955561553]
-is_liar = false
+is_shapeshifter = false
 text = "At least one of my neighbors is a liar"
 
 [node name="Person3" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="2" unique_id=301645523]
-color = 1
+group = 1
 text = "My left neighbor is telling the truth"
 
 [node name="Person4" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="3" unique_id=1899548976]
-is_liar = true
+is_shapeshifter = true
 text = "There is exactly one lying oracle"
 
 [node name="Person5" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="4" unique_id=670497829 instance=ExtResource("2_bl61q")]
 layout_mode = 2
-color = 2
-is_liar = true
+group = 2
+is_shapeshifter = true
 text = "There are exactly two lying oracles"
 
 [node name="Person6" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="5" unique_id=1297141009 instance=ExtResource("2_bl61q")]
 layout_mode = 2
-color = 1
+group = 1
 text = "I have exactly one lying neighbor"
 
 [node name="Person7" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="6" unique_id=412320432 instance=ExtResource("2_bl61q")]
 layout_mode = 2
-color = 1
+group = 1
 text = "There is at least one lying wizard"
 
 [node name="Person8" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="7" unique_id=74820169 instance=ExtResource("2_bl61q")]
 layout_mode = 2
-color = 2
+group = 2
 text = "At least one person in this column is lying"
 
 [node name="Person9" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="8" unique_id=1436297446 instance=ExtResource("2_bl61q")]
 layout_mode = 2
-color = 1
+group = 1
 text = "There are as many lying wizards as lying witches"

@@ -13,41 +13,41 @@ bottom_out_text = "Assume B1 tells the truth, this means that A1's statement is 
 columns = 3
 
 [node name="Person" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="0" unique_id=1970352386]
-color = 2
+group = 2
 text = "My right neighbor has the most lying neighbors"
 
 [node name="Person2" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="1" unique_id=955561553]
-is_liar = false
+is_shapeshifter = false
 text = "Four of my neighbors are liars"
 
 [node name="Person3" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="2" unique_id=301645523]
-color = 1
-is_liar = true
+group = 1
+is_shapeshifter = true
 text = "This row has at least 2 liars"
 
 [node name="Person4" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="3" unique_id=1899548976]
-is_liar = true
+is_shapeshifter = true
 text = "My below neighbor is lying"
 
 [node name="Person5" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="4" unique_id=270157986 instance=ExtResource("2_ajlgv")]
 layout_mode = 2
-color = 1
-is_liar = true
+group = 1
+is_shapeshifter = true
 text = "This row has at least one truth-teller"
 
 [node name="Person6" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="5" unique_id=919245891 instance=ExtResource("2_ajlgv")]
 layout_mode = 2
-is_liar = true
+is_shapeshifter = true
 text = "This column only has one liar"
 
 [node name="Person7" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="6" unique_id=1181329879 instance=ExtResource("2_ajlgv")]
 layout_mode = 2
-color = 2
+group = 2
 text = "Witches and oracles have the same number of liars"
 
 [node name="Person8" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="7" unique_id=1337602827 instance=ExtResource("2_ajlgv")]
 layout_mode = 2
-color = 2
+group = 2
 text = "This row only has truth-tellers"
 
 [node name="Person9" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="8" unique_id=895661934 instance=ExtResource("2_ajlgv")]

@@ -11,16 +11,16 @@ bottom_out_text = "C1 and A3 give the same information, and since there is only 
 columns = 3
 
 [node name="Person" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="0" unique_id=1970352386]
-color = 2
-is_liar = true
+group = 2
+is_shapeshifter = true
 text = "Every wizard is a truth-teller"
 
 [node name="Person2" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="1" unique_id=955561553]
-is_liar = false
+is_shapeshifter = false
 text = "No oracle is a liar"
 
 [node name="Person3" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="2" unique_id=301645523]
-color = 0
+group = 0
 text = "Every witch is a truth-teller"
 
 [node name="Person4" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="3" unique_id=1899548976]
@@ -28,12 +28,12 @@ text = "I am a truth-teller"
 
 [node name="Person5" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="4" unique_id=1578394803 instance=ExtResource("2_w6h2s")]
 layout_mode = 2
-color = 1
+group = 1
 text = "No oracle is a liar"
 
 [node name="Person6" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="5" unique_id=276044851 instance=ExtResource("2_w6h2s")]
 layout_mode = 2
-color = 2
+group = 2
 text = "One wizard is lying"
 
 [node name="Person7" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="6" unique_id=312033789 instance=ExtResource("2_w6h2s")]
@@ -42,7 +42,7 @@ text = "Every witch is a truth-teller"
 
 [node name="Person8" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="7" unique_id=1529108388 instance=ExtResource("2_w6h2s")]
 layout_mode = 2
-color = 2
+group = 2
 text = "This row only has truth-tellers"
 
 [node name="Person9" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="8" unique_id=2076444613 instance=ExtResource("2_w6h2s")]

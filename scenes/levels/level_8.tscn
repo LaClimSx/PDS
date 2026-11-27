@@ -14,43 +14,43 @@ bottom_out_text = "This is the final boss. B3 clears B2 so they have the same ro
 columns = 3
 
 [node name="Person" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="0" unique_id=1970352386]
-color = 2
+group = 2
 text = "There is at least one liar in the middle row"
 
 [node name="Person2" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="1" unique_id=955561553]
-color = 0
-is_liar = false
+group = 0
+is_shapeshifter = false
 text = "Everyone in this column tells the truth"
 
 [node name="Person3" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="2" unique_id=301645523]
-color = 0
-is_liar = true
+group = 0
+is_shapeshifter = true
 
 [node name="Person4" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="3" unique_id=1899548976]
-is_liar = true
+is_shapeshifter = true
 text = "Not all my neighbors tell the truth"
 
 [node name="Person5" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="4" unique_id=670497829 instance=ExtResource("2_805pq")]
 layout_mode = 2
-color = 2
+group = 2
 text = "I have exactly two neighbors that tell lies"
 
 [node name="Person6" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="5" unique_id=1297141009 instance=ExtResource("2_805pq")]
 layout_mode = 2
-color = 1
+group = 1
 text = "My bottom neighbor tells the truth"
 
 [node name="Person7" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="6" unique_id=412320432 instance=ExtResource("2_805pq")]
 layout_mode = 2
-color = 1
+group = 1
 text = "Not all my neighbors tell the truth"
 
 [node name="Person8" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="7" unique_id=74820169 instance=ExtResource("2_805pq")]
 layout_mode = 2
-color = 1
+group = 1
 text = "My top neighbor tells the truth"
 
 [node name="Person9" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="8" unique_id=1436297446 instance=ExtResource("2_805pq")]
 layout_mode = 2
-color = 2
+group = 2
 text = "There is at least one lying witch"

@@ -13,24 +13,24 @@ bottom_out_text = "Since A1, B3 and C3 agree and there are only 2 liars, they mu
 columns = 3
 
 [node name="Person" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="0" unique_id=1970352386]
-color = 1
+group = 1
 text = "No oracle lies"
 
 [node name="Person2" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="1" unique_id=955561553]
-color = 2
+group = 2
 text = "I am telling the truth"
 
 [node name="Person3" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="2" unique_id=301645523]
-color = 1
+group = 1
 text = "I have at most 2 neighbors that tell the truth"
 
 [node name="Person4" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="3" unique_id=1899548976]
-is_liar = true
+is_shapeshifter = true
 text = "My bottom neighbor is lying"
 
 [node name="Person5" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="4" unique_id=670497829 instance=ExtResource("2_805pq")]
 layout_mode = 2
-color = 2
+group = 2
 text = "Two of the liars are neighbors"
 
 [node name="Person6" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="5" unique_id=1297141009 instance=ExtResource("2_805pq")]
@@ -43,10 +43,10 @@ text = "My top neighbor is lying"
 
 [node name="Person8" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="7" unique_id=74820169 instance=ExtResource("2_805pq")]
 layout_mode = 2
-color = 1
+group = 1
 text = "No oracle lies"
 
 [node name="Person9" parent="PanelContainer/HBoxContainer/VBoxContainer/GridContainer" index="8" unique_id=1436297446 instance=ExtResource("2_805pq")]
 layout_mode = 2
-color = 1
+group = 1
 text = "No oracle lies"
