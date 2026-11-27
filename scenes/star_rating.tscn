@@ -1,57 +1,60 @@
-[gd_scene format=3 uid="uid://4gnqsd4idsfb"]
+[gd_scene format=3 uid="uid://um0ha17ihknv"]
 
-[ext_resource type="Script" uid="uid://ce13u8gshofj8" path="res://scripts/star_rating_name.gd" id="1_2ldo4"]
-[ext_resource type="Theme" uid="uid://dswlx0k1a324t" path="res://assets/theme.tres" id="1_d1gsr"]
-[ext_resource type="Script" uid="uid://c3brn4kci0aps" path="res://scripts/star_rating.gd" id="1_fah32"]
-[ext_resource type="Texture2D" uid="uid://8u4cs8ywv207" path="res://assets/art/rating/starEmpty.png" id="2_fah32"]
+[ext_resource type="Theme" uid="uid://dswlx0k1a324t" path="res://assets/theme.tres" id="1_r7fpv"]
+[ext_resource type="Texture2D" uid="uid://cjkj71sheuy6a" path="res://assets/art/rating/starsEmpty.png" id="2_5vxbu"]
+[ext_resource type="Script" uid="uid://uku06nj84qa8" path="res://scripts/star_rating.gd" id="2_sac1l"]
+[ext_resource type="Texture2D" uid="uid://dis8cwfpn1akq" path="res://assets/art/rating/starsFull.png" id="3_sac1l"]
 
-[node name="StarRating" type="VBoxContainer" unique_id=254500668]
-offset_right = 276.0
-offset_bottom = 89.0
-theme = ExtResource("1_d1gsr")
-script = ExtResource("1_2ldo4")
+[sub_resource type="ImageTexture" id="ImageTexture_5vxbu"]
 
-[node name="DataName" type="Label" parent="." unique_id=298915834]
-unique_name_in_owner = true
+[sub_resource type="ImageTexture" id="ImageTexture_sac1l"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_hja3b"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_2nm0t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5vxbu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sac1l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hja3b"]
+
+[node name="StarRating" type="VBoxContainer" unique_id=933000596]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_r7fpv")
+alignment = 1
+script = ExtResource("2_sac1l")
+
+[node name="Item" type="Label" parent="." unique_id=305177423]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
-text = "Frustration :"
+text = "Frustration"
 horizontal_alignment = 1
 
-[node name="Stars" type="HBoxContainer" parent="." unique_id=958664001]
+[node name="StarsProgressBar" type="TextureProgressBar" parent="." unique_id=424397616]
 layout_mode = 2
 size_flags_horizontal = 4
-script = ExtResource("1_fah32")
+max_value = 5.0
+step = 0.5
+texture_under = ExtResource("2_5vxbu")
+texture_progress = ExtResource("3_sac1l")
 
-[node name="Star1" type="TextureRect" parent="Stars" unique_id=1753324552]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("2_fah32")
+[node name="Slider" type="HSlider" parent="StarsProgressBar" unique_id=1069405332]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_icons/grabber = SubResource("ImageTexture_5vxbu")
+theme_override_icons/grabber_highlight = SubResource("ImageTexture_sac1l")
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_hja3b")
+theme_override_icons/tick = SubResource("ImageTexture_2nm0t")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_5vxbu")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_sac1l")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_hja3b")
+max_value = 5.0
+step = 0.5
 
-[node name="Star2" type="TextureRect" parent="Stars" unique_id=1429289865]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("2_fah32")
-
-[node name="Star3" type="TextureRect" parent="Stars" unique_id=1803438692]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("2_fah32")
-
-[node name="Star4" type="TextureRect" parent="Stars" unique_id=398417401]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("2_fah32")
-
-[node name="Star5" type="TextureRect" parent="Stars" unique_id=441339533]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("2_fah32")
-
-[node name="StarRating" type="Control" parent="." unique_id=1923987626]
-layout_mode = 2
+[connection signal="value_changed" from="StarsProgressBar/Slider" to="." method="_on_slider_value_changed"]

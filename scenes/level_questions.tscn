@@ -2,8 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://dswlx0k1a324t" path="res://assets/theme.tres" id="1_000jw"]
 [ext_resource type="Texture2D" uid="uid://c2ruxucr3240e" path="res://assets/art/background.png" id="1_uofqr"]
-[ext_resource type="PackedScene" uid="uid://4gnqsd4idsfb" path="res://scenes/star_rating.tscn" id="2_oqjfw"]
 [ext_resource type="Texture2D" uid="uid://c5g8bssx0e4rw" path="res://assets/art/rating/submitButtonNormal.png" id="3_0yla2"]
+[ext_resource type="PackedScene" uid="uid://um0ha17ihknv" path="res://scenes/star_rating.tscn" id="3_myn7e"]
 [ext_resource type="Texture2D" uid="uid://6urk246mlahb" path="res://assets/art/rating/submitButtonPressed.png" id="4_000jw"]
 [ext_resource type="Texture2D" uid="uid://bryg7rn7nug32" path="res://assets/art/rating/submitButtonHover.png" id="5_myn7e"]
 
@@ -51,22 +51,23 @@ theme_override_constants/separation = 30
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "What did you think of this level ?"
+horizontal_alignment = 1
 
-[node name="Difficulty" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1923987626 instance=ExtResource("2_oqjfw")]
+[node name="Difficulty" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=933000596 instance=ExtResource("3_myn7e")]
 layout_mode = 2
-data_name = "Difficulty of the level"
+item_text = "Difficulty of the level"
 
-[node name="Frustration" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1305394077 instance=ExtResource("2_oqjfw")]
+[node name="Frustration" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=389644370 instance=ExtResource("3_myn7e")]
 layout_mode = 2
-data_name = "Frustration you felt"
+item_text = "Frustration you felt"
 
-[node name="Boring" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=2125560394 instance=ExtResource("2_oqjfw")]
+[node name="Boring" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1624475018 instance=ExtResource("3_myn7e")]
 layout_mode = 2
-data_name = "Boringness felt"
+item_text = "Boringness felt"
 
-[node name="Hints" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=254500668 instance=ExtResource("2_oqjfw")]
+[node name="Hints" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1269302565 instance=ExtResource("3_myn7e")]
 layout_mode = 2
-data_name = "Helpfulness of hints"
+item_text = "Helpfulness of hints"
 
 [node name="Giveup" type="TextEdit" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=719762513]
 custom_minimum_size = Vector2(200, 150)
@@ -76,6 +77,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_0yla2")
 placeholder_text = "Why did you give up ?"
 emoji_menu_enabled = false
+wrap_mode = 1
 virtual_keyboard_enabled = false
 
 [node name="TextureButton" type="TextureButton" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=769007431]
