@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://c2ruxucr3240e" path="res://assets/art/background.png" id="2_fwca6"]
 [ext_resource type="Texture2D" uid="uid://cxm1w20y8a1j8" path="res://assets/art/tuto/startButtonNormal.png" id="4_kisrk"]
 [ext_resource type="Texture2D" uid="uid://c8yoij8csxiop" path="res://assets/art/merlin_fit.png" id="4_onjet"]
+[ext_resource type="Texture2D" uid="uid://v6acbcge3w68" path="res://assets/art/checked.png" id="5_drxqf"]
 [ext_resource type="Texture2D" uid="uid://c3mun3ajadc05" path="res://assets/art/tuto/startButtonPressed.png" id="5_onjet"]
+[ext_resource type="Texture2D" uid="uid://brfkw1thoqj3u" path="res://assets/art/unchecked.png" id="6_bur5e"]
 [ext_resource type="Texture2D" uid="uid://m1g5jjt0r00r" path="res://assets/art/tuto/startButtonHover.png" id="6_ser3y"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4djcb"]
@@ -40,7 +42,6 @@ text = "All witches lie"
 unique_name_in_owner = true
 
 [node name="Start" type="PanelContainer" parent="." index="2" unique_id=1921642128]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -85,7 +86,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="DataLabel" type="Label" parent="Start/HBoxContainer/MarginContainer/VBoxContainer" index="1" unique_id=1226264396]
+[node name="CenterContainer" type="CenterContainer" parent="Start/HBoxContainer/MarginContainer/VBoxContainer" index="1" unique_id=374752669]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckBox" parent="Start/HBoxContainer/MarginContainer/VBoxContainer/CenterContainer" index="0" unique_id=135222115]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.4862745, 0.46666667, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.5058824, 0.49019608, 0.74509805, 1)
+theme_override_colors/font_hover_color = Color(0.28627452, 0.18431373, 0.43529412, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.48235294, 0.45882353, 0.7137255, 1)
+theme_override_colors/font_outline_color = Color(0.28627452, 0.18431373, 0.43529412, 1)
+theme_override_icons/checked = ExtResource("5_drxqf")
+theme_override_icons/unchecked = ExtResource("6_bur5e")
+text = "I have already played "
+flat = true
+alignment = 1
+
+[node name="DataLabel" type="Label" parent="Start/HBoxContainer/MarginContainer/VBoxContainer" index="2" unique_id=1226264396]
 custom_minimum_size = Vector2(955, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -94,7 +112,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="StartButton" type="TextureButton" parent="Start/HBoxContainer/MarginContainer/VBoxContainer" index="2" unique_id=1955136546]
+[node name="StartButton" type="TextureButton" parent="Start/HBoxContainer/MarginContainer/VBoxContainer" index="3" unique_id=1955136546]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
