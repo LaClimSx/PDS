@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://4gnqsd4idsfb"]
+
+[ext_resource type="Script" uid="uid://ce13u8gshofj8" path="res://scripts/star_rating_name.gd" id="1_2ldo4"]
+[ext_resource type="Script" uid="uid://c3brn4kci0aps" path="res://scripts/star_rating.gd" id="1_fah32"]
+[ext_resource type="Texture2D" uid="uid://8u4cs8ywv207" path="res://assets/art/rating/starEmpty.png" id="2_fah32"]
+
+[node name="StarRating" type="VBoxContainer" unique_id=254500668]
+offset_right = 276.0
+offset_bottom = 89.0
+script = ExtResource("1_2ldo4")
+
+[node name="DataName" type="Label" parent="." unique_id=298915834]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Frustration :"
+horizontal_alignment = 1
+
+[node name="Stars" type="HBoxContainer" parent="." unique_id=958664001]
+layout_mode = 2
+size_flags_horizontal = 4
+script = ExtResource("1_fah32")
+
+[node name="Star1" type="TextureRect" parent="Stars" unique_id=1753324552]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_fah32")
+
+[node name="Star2" type="TextureRect" parent="Stars" unique_id=1429289865]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_fah32")
+
+[node name="Star3" type="TextureRect" parent="Stars" unique_id=1803438692]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_fah32")
+
+[node name="Star4" type="TextureRect" parent="Stars" unique_id=398417401]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_fah32")
+
+[node name="Star5" type="TextureRect" parent="Stars" unique_id=441339533]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_fah32")
+
+[node name="StarRating" type="Control" parent="." unique_id=1923987626]
+layout_mode = 2

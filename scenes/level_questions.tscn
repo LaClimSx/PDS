@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bwfi3oxaqamyv"]
+
+[ext_resource type="Texture2D" uid="uid://c2ruxucr3240e" path="res://assets/art/background.png" id="1_uofqr"]
+[ext_resource type="PackedScene" uid="uid://4gnqsd4idsfb" path="res://scenes/star_rating.tscn" id="2_oqjfw"]
+[ext_resource type="Texture2D" uid="uid://c5g8bssx0e4rw" path="res://assets/art/rating/submitButtonNormal.png" id="3_0yla2"]
+[ext_resource type="Texture2D" uid="uid://6urk246mlahb" path="res://assets/art/rating/submitButtonPressed.png" id="4_000jw"]
+[ext_resource type="Texture2D" uid="uid://bryg7rn7nug32" path="res://assets/art/rating/submitButtonHover.png" id="5_myn7e"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oqjfw"]
+texture = ExtResource("1_uofqr")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0yla2"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.28627452, 0.18431373, 0.43529412, 0.60784316)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3529412, 0.28235295, 0.5372549, 1)
+
+[node name="LevelQuestions" type="Control" unique_id=1017159083]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=188474449]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oqjfw")
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer" unique_id=196216104]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer" unique_id=245386360]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=129636891]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "What did you think of this level ?"
+
+[node name="Difficulty" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1923987626 instance=ExtResource("2_oqjfw")]
+layout_mode = 2
+data_name = "Difficulty of the level"
+
+[node name="Frustration" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1305394077 instance=ExtResource("2_oqjfw")]
+layout_mode = 2
+data_name = "Frustration you felt"
+
+[node name="Boring" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=2125560394 instance=ExtResource("2_oqjfw")]
+layout_mode = 2
+data_name = "Boringness felt"
+
+[node name="Hints" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=254500668 instance=ExtResource("2_oqjfw")]
+layout_mode = 2
+data_name = "Helpfulness of hints"
+
+[node name="Giveup" type="TextEdit" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=719762513]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+theme_override_constants/caret_width = 1
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_0yla2")
+placeholder_text = "Why did you give up ?"
+emoji_menu_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=769007431]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_0yla2")
+texture_pressed = ExtResource("4_000jw")
+texture_hover = ExtResource("5_myn7e")
