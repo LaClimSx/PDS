@@ -2,9 +2,9 @@ extends PanelContainer
 class_name Person
 
 enum ColorGroup {
-	RED,
-	GREEN,
-	BLUE,
+	WITCH,
+	ORACLE,
+	WIZARD,
 }
 
 
@@ -33,11 +33,11 @@ enum ColorGroup {
 
 func init_person() -> void:
 	match color:
-		ColorGroup.RED:
+		ColorGroup.WITCH:
 			texture_rect.texture = red_texture
-		ColorGroup.GREEN:
+		ColorGroup.ORACLE:
 			texture_rect.texture = yellow_texture
-		ColorGroup.BLUE:
+		ColorGroup.WIZARD:
 			texture_rect.texture = blue_texture
 	info_label.text = text
 
@@ -67,11 +67,11 @@ func reveal_guilty(correct_guess: bool) -> void:
 		add_theme_stylebox_override("panel", innocent_stylebox)
 	if is_liar:
 		match color:
-			ColorGroup.RED:
+			ColorGroup.WITCH:
 				texture_rect.texture = red_liar_texture
-			ColorGroup.GREEN:
+			ColorGroup.ORACLE:
 				texture_rect.texture = yellow_liar_texture
-			ColorGroup.BLUE:
+			ColorGroup.WIZARD:
 				texture_rect.texture = blue_liar_texture
 
 
