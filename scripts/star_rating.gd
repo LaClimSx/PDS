@@ -30,7 +30,6 @@ func _gui_input(event: InputEvent) -> void:
 	
 	if is_click or is_drag :
 		var x: float = clamp(event.position.x, 0.0, size.x - 1.0)
-		print("click")
 		for i in get_child_count():
 			var star: Control = get_child(i)
 			if event.position.x < star.position.x + star.size.x:
@@ -41,5 +40,4 @@ func _gui_input(event: InputEvent) -> void:
 				return
 
 func _on_rating_changed(value: float) -> void:
-	print("rating changed")
 	rating = value
