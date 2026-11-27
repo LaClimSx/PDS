@@ -1,0 +1,19 @@
+[gd_resource type="Theme" format=3 uid="uid://ckqpld7gnmyie"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xcq7"]
+bg_color = Color(0.17460626, 0.1049371, 0.27582464, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_cbtt7"]
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbtt7"]
+bg_color = Color(0.28627452, 0.18431373, 0.43529412, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_5xcq7"]
+color = Color(1, 1, 1, 1)
+
+[resource]
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_5xcq7")
+PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxLine_cbtt7")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_cbtt7")
+PopupMenu/styles/separator = SubResource("StyleBoxLine_5xcq7")

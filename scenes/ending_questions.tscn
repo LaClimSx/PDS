@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://dlso6e6okuics"]
+
+[ext_resource type="Texture2D" uid="uid://c2ruxucr3240e" path="res://assets/art/background.png" id="1_cbtt7"]
+[ext_resource type="PackedScene" uid="uid://4gnqsd4idsfb" path="res://scenes/star_rating.tscn" id="2_5xcq7"]
+[ext_resource type="Theme" uid="uid://ckqpld7gnmyie" path="res://assets/menuTheme.tres" id="2_ieh3a"]
+[ext_resource type="Texture2D" uid="uid://c5g8bssx0e4rw" path="res://assets/art/rating/submitButtonNormal.png" id="3_ieh3a"]
+[ext_resource type="Texture2D" uid="uid://6urk246mlahb" path="res://assets/art/rating/submitButtonPressed.png" id="4_rwa88"]
+[ext_resource type="Texture2D" uid="uid://bryg7rn7nug32" path="res://assets/art/rating/submitButtonHover.png" id="5_hwg41"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oqjfw"]
+texture = ExtResource("1_cbtt7")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trlq5"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.28627452, 0.18431373, 0.43529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0yla2"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.28627452, 0.18431373, 0.43529412, 0.60784316)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3529412, 0.28235295, 0.5372549, 1)
+
+[node name="EndingQuestions" type="Control" unique_id=1017159083]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=188474449]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oqjfw")
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer" unique_id=196216104]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer" unique_id=245386360]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=129636891]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Thanks you for playing our game !
+We just have a few last questions for our study"
+horizontal_alignment = 1
+
+[node name="Gender" type="OptionButton" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=702156196]
+layout_mode = 2
+theme = ExtResource("2_ieh3a")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_trlq5")
+selected = 5
+item_count = 6
+popup/item_0/text = "Male"
+popup/item_0/id = 0
+popup/item_1/text = "Female"
+popup/item_1/id = 1
+popup/item_2/text = "Non-Binary"
+popup/item_2/id = 2
+popup/item_3/text = "Prefer not to answer"
+popup/item_3/id = 3
+popup/item_4/text = "Other"
+popup/item_4/id = 4
+popup/item_5/text = "Gender"
+popup/item_5/id = 5
+popup/item_5/disabled = true
+
+[node name="Age" type="OptionButton" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=44288440]
+layout_mode = 2
+theme = ExtResource("2_ieh3a")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_trlq5")
+selected = 7
+item_count = 8
+popup/item_0/text = "-16"
+popup/item_0/id = 0
+popup/item_1/text = "16-20"
+popup/item_1/id = 1
+popup/item_2/text = "21-25"
+popup/item_2/id = 2
+popup/item_3/text = "26-30"
+popup/item_3/id = 3
+popup/item_4/text = "31-35"
+popup/item_4/id = 4
+popup/item_5/text = "36-40"
+popup/item_5/id = 5
+popup/item_6/text = "40+"
+popup/item_6/id = 6
+popup/item_7/text = "Age"
+popup/item_7/id = 7
+popup/item_7/disabled = true
+
+[node name="XP" type="OptionButton" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1506411340]
+layout_mode = 2
+theme = ExtResource("2_ieh3a")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_trlq5")
+selected = 6
+item_count = 7
+popup/item_0/text = "0-5h per week"
+popup/item_0/id = 0
+popup/item_1/text = "6-10h per week"
+popup/item_1/id = 1
+popup/item_2/text = "11-15h per week"
+popup/item_2/id = 2
+popup/item_3/text = "16-20h per week"
+popup/item_3/id = 3
+popup/item_4/text = "21_25h per week"
+popup/item_4/id = 4
+popup/item_5/text = "25+h per week"
+popup/item_5/id = 5
+popup/item_6/text = "How many hours per week do you play"
+popup/item_6/id = 6
+popup/item_6/disabled = true
+
+[node name="Familiarity" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1923987626 instance=ExtResource("2_5xcq7")]
+layout_mode = 2
+data_name = "Was this type of mechanic familiar ?"
+
+[node name="Improvement" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1305394077 instance=ExtResource("2_5xcq7")]
+layout_mode = 2
+data_name = "Did you feel like you improved ?"
+
+[node name="GameRating" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=2125560394 instance=ExtResource("2_5xcq7")]
+layout_mode = 2
+data_name = "Did you enjoy the game ?"
+
+[node name="Comments" type="TextEdit" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=719762513]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+theme_override_constants/caret_width = 1
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_0yla2")
+placeholder_text = "Do you have a comment"
+emoji_menu_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=769007431]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_ieh3a")
+texture_pressed = ExtResource("4_rwa88")
+texture_hover = ExtResource("5_hwg41")
