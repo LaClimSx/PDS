@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://um0ha17ihknv" path="res://scenes/star_rating.tscn" id="2_5xcq7"]
 [ext_resource type="Theme" uid="uid://dswlx0k1a324t" path="res://assets/theme.tres" id="2_ieh3a"]
 [ext_resource type="Texture2D" uid="uid://c5g8bssx0e4rw" path="res://assets/art/rating/submitButtonNormal.png" id="3_ieh3a"]
+[ext_resource type="PackedScene" uid="uid://hit1j7y6ecqv" path="res://scenes/itemized_rating.tscn" id="3_rwa88"]
 [ext_resource type="Texture2D" uid="uid://6urk246mlahb" path="res://assets/art/rating/submitButtonPressed.png" id="4_rwa88"]
 [ext_resource type="Texture2D" uid="uid://bryg7rn7nug32" path="res://assets/art/rating/submitButtonHover.png" id="5_hwg41"]
 
@@ -73,7 +74,7 @@ popup/item_1/text = "Man"
 popup/item_1/id = 1
 popup/item_2/text = "Non-Binary"
 popup/item_2/id = 2
-popup/item_3/text = "Prefer not to answer"
+popup/item_3/text = "Prefer not to say"
 popup/item_3/id = 3
 popup/item_4/text = "Gender Identity"
 popup/item_4/id = 5
@@ -83,25 +84,23 @@ popup/item_4/disabled = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_trlq5")
-selected = 7
-item_count = 8
-popup/item_0/text = "-16"
+selected = 6
+item_count = 7
+popup/item_0/text = "-18"
 popup/item_0/id = 0
-popup/item_1/text = "16-20"
+popup/item_1/text = "18-24"
 popup/item_1/id = 1
-popup/item_2/text = "21-25"
+popup/item_2/text = "25-34"
 popup/item_2/id = 2
-popup/item_3/text = "26-30"
+popup/item_3/text = "35-44"
 popup/item_3/id = 3
-popup/item_4/text = "31-35"
+popup/item_4/text = "45+"
 popup/item_4/id = 4
-popup/item_5/text = "36-40"
-popup/item_5/id = 5
-popup/item_6/text = "40+"
-popup/item_6/id = 6
-popup/item_7/text = "Age"
-popup/item_7/id = 7
-popup/item_7/disabled = true
+popup/item_5/text = "Prefer not to say"
+popup/item_5/id = 6
+popup/item_6/text = "Age"
+popup/item_6/id = 7
+popup/item_6/disabled = true
 
 [node name="XP" type="OptionButton" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1506411340]
 layout_mode = 2
@@ -117,25 +116,41 @@ popup/item_2/text = "11-15h per week"
 popup/item_2/id = 2
 popup/item_3/text = "16-20h per week"
 popup/item_3/id = 3
-popup/item_4/text = "21_25h per week"
+popup/item_4/text = "21-25h per week"
 popup/item_4/id = 4
-popup/item_5/text = "25+h per week"
+popup/item_5/text = "26+h per week"
 popup/item_5/id = 5
 popup/item_6/text = "How many hours per week do you play?"
 popup/item_6/id = 6
 popup/item_6/disabled = true
 
-[node name="Familiarity" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=933000596 instance=ExtResource("2_5xcq7")]
+[node name="Familiarity" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=635710108 instance=ExtResource("3_rwa88")]
+layout_mode = 2
+
+[node name="Improvement" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=25857452 instance=ExtResource("3_rwa88")]
+layout_mode = 2
+item_name = "Do you believe that you improved since the beginning?"
+labels = Array[String](["I did not improve at all", "Slightly improved", "Somewhat improved", "Moderately improved", "Extremely improved"])
+
+[node name="GameRating" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=596813589 instance=ExtResource("3_rwa88")]
+layout_mode = 2
+item_name = "Did you enjoy the game?"
+labels = Array[String](["Not at all", "Slightly", "Somewhat", "Moderately ", "Extremely"])
+
+[node name="FamiliarityStars" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=933000596 instance=ExtResource("2_5xcq7")]
+visible = false
 layout_mode = 2
 item_text = "Was this type of mechanic familiar ?"
 
-[node name="Improvement" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=146765336 instance=ExtResource("2_5xcq7")]
+[node name="ImprovementStars" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=146765336 instance=ExtResource("2_5xcq7")]
+visible = false
 layout_mode = 2
 item_text = "Did you feel like you improved ?"
 
-[node name="GameRating" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=473558724 instance=ExtResource("2_5xcq7")]
+[node name="GameRatingStars" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=473558724 instance=ExtResource("2_5xcq7")]
+visible = false
 layout_mode = 2
-item_text = "Did you feel like you improved ?"
+item_text = "Did you enjoy the game?"
 
 [node name="Comments" type="TextEdit" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=719762513]
 custom_minimum_size = Vector2(200, 150)

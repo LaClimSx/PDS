@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://hit1j7y6ecqv"]
+
+[ext_resource type="Theme" uid="uid://dswlx0k1a324t" path="res://assets/theme.tres" id="1_l8lb6"]
+[ext_resource type="Script" uid="uid://ceiwk58kiewbv" path="res://scripts/itemized_rating.gd" id="2_gu47s"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_l8lb6"]
+allow_unpress = true
+
+[node name="ItemizedRating" type="VBoxContainer" unique_id=635710108 node_paths=PackedStringArray("checkboxes", "checkbox_labels")]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_l8lb6")
+script = ExtResource("2_gu47s")
+checkboxes = [NodePath("PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox/CheckBox"), NodePath("PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox2/CheckBox"), NodePath("PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox3/CheckBox"), NodePath("PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox4/CheckBox"), NodePath("PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox5/CheckBox")]
+checkbox_labels = [NodePath("PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox/Label"), NodePath("PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox2/Label"), NodePath("PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox3/Label"), NodePath("PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox4/Label"), NodePath("PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox5/Label")]
+
+[node name="Item" type="Label" parent="." unique_id=2144122853]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "How familiar are you with logic games?"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1431031590]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1524067691]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="Checkboxes" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1050730314]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="ItemizedCheckbox" type="VBoxContainer" parent="PanelContainer/MarginContainer/Checkboxes" unique_id=436625755]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox" unique_id=860112160]
+layout_mode = 2
+size_flags_horizontal = 4
+button_group = SubResource("ButtonGroup_l8lb6")
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox" unique_id=268423521]
+layout_mode = 2
+text = "Not at all familiar"
+horizontal_alignment = 1
+
+[node name="ItemizedCheckbox2" type="VBoxContainer" parent="PanelContainer/MarginContainer/Checkboxes" unique_id=27683361]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox2" unique_id=390870133]
+layout_mode = 2
+size_flags_horizontal = 4
+button_group = SubResource("ButtonGroup_l8lb6")
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox2" unique_id=1026652965]
+layout_mode = 2
+text = "Slightly familiar"
+horizontal_alignment = 1
+
+[node name="ItemizedCheckbox3" type="VBoxContainer" parent="PanelContainer/MarginContainer/Checkboxes" unique_id=1784641526]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox3" unique_id=1765580328]
+layout_mode = 2
+size_flags_horizontal = 4
+button_group = SubResource("ButtonGroup_l8lb6")
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox3" unique_id=1777610191]
+layout_mode = 2
+text = "Somewhat familiar"
+horizontal_alignment = 1
+
+[node name="ItemizedCheckbox4" type="VBoxContainer" parent="PanelContainer/MarginContainer/Checkboxes" unique_id=1788323800]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox4" unique_id=1343669251]
+layout_mode = 2
+size_flags_horizontal = 4
+button_group = SubResource("ButtonGroup_l8lb6")
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox4" unique_id=390629456]
+layout_mode = 2
+text = "Moderately familiar"
+horizontal_alignment = 1
+
+[node name="ItemizedCheckbox5" type="VBoxContainer" parent="PanelContainer/MarginContainer/Checkboxes" unique_id=518366205]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox5" unique_id=1180406101]
+layout_mode = 2
+size_flags_horizontal = 4
+button_group = SubResource("ButtonGroup_l8lb6")
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Checkboxes/ItemizedCheckbox5" unique_id=341252823]
+layout_mode = 2
+text = "Extremely familiar"
+horizontal_alignment = 1

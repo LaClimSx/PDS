@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c5g8bssx0e4rw" path="res://assets/art/rating/submitButtonNormal.png" id="3_0yla2"]
 [ext_resource type="PackedScene" uid="uid://um0ha17ihknv" path="res://scenes/star_rating.tscn" id="3_myn7e"]
 [ext_resource type="Texture2D" uid="uid://6urk246mlahb" path="res://assets/art/rating/submitButtonPressed.png" id="4_000jw"]
+[ext_resource type="PackedScene" uid="uid://hit1j7y6ecqv" path="res://scenes/itemized_rating.tscn" id="4_myn7e"]
 [ext_resource type="Texture2D" uid="uid://bryg7rn7nug32" path="res://assets/art/rating/submitButtonHover.png" id="5_myn7e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oqjfw"]
@@ -53,19 +54,41 @@ theme_override_font_sizes/font_size = 30
 text = "What did you think of this level ?"
 horizontal_alignment = 1
 
-[node name="Difficulty" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=933000596 instance=ExtResource("3_myn7e")]
+[node name="Difficulty" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=635710108 instance=ExtResource("4_myn7e")]
+layout_mode = 2
+item_name = "Level of Difficulty"
+labels = Array[String](["Very difficult", "Difficult", "Neutral", "Easy", "Very easy"])
+
+[node name="Frustration" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=246156733 instance=ExtResource("4_myn7e")]
+layout_mode = 2
+item_name = "Level of Frustration"
+labels = Array[String](["Not frustrating at all", "Slightly frustrating", "Somewhat frustrating", "Moderately frustrating", "Extremely frustrating"])
+
+[node name="Boring" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=2119886125 instance=ExtResource("4_myn7e")]
+layout_mode = 2
+
+[node name="Hints" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=2073058690 instance=ExtResource("4_myn7e")]
+layout_mode = 2
+item_name = "Find the right question about boringness"
+labels = Array[String](["Useless", "Slightly useful", "Somewhat useful", "Moderately useful", "Extremely useful"])
+
+[node name="DifficultyStars" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=933000596 instance=ExtResource("3_myn7e")]
+visible = false
 layout_mode = 2
 item_text = "Difficulty of the level"
 
-[node name="Frustration" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=389644370 instance=ExtResource("3_myn7e")]
+[node name="FrustrationStars" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=389644370 instance=ExtResource("3_myn7e")]
+visible = false
 layout_mode = 2
 item_text = "Frustration you felt"
 
-[node name="Boring" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1624475018 instance=ExtResource("3_myn7e")]
+[node name="BoringStars" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1624475018 instance=ExtResource("3_myn7e")]
+visible = false
 layout_mode = 2
 item_text = "Boringness felt"
 
-[node name="Hints" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1269302565 instance=ExtResource("3_myn7e")]
+[node name="HintsStars" parent="PanelContainer/CenterContainer/VBoxContainer" unique_id=1269302565 instance=ExtResource("3_myn7e")]
+visible = false
 layout_mode = 2
 item_text = "Helpfulness of hints"
 
