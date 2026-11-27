@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bwfi3oxaqamyv"]
 
+[ext_resource type="Theme" uid="uid://dswlx0k1a324t" path="res://assets/theme.tres" id="1_000jw"]
 [ext_resource type="Texture2D" uid="uid://c2ruxucr3240e" path="res://assets/art/background.png" id="1_uofqr"]
 [ext_resource type="PackedScene" uid="uid://4gnqsd4idsfb" path="res://scenes/star_rating.tscn" id="2_oqjfw"]
 [ext_resource type="Texture2D" uid="uid://c5g8bssx0e4rw" path="res://assets/art/rating/submitButtonNormal.png" id="3_0yla2"]
@@ -28,6 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_000jw")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=188474449]
 layout_mode = 1
