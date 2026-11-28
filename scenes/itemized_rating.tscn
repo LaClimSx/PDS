@@ -3,6 +3,9 @@
 [ext_resource type="Theme" uid="uid://dswlx0k1a324t" path="res://assets/theme.tres" id="1_l8lb6"]
 [ext_resource type="Script" uid="uid://ceiwk58kiewbv" path="res://scripts/itemized_rating.gd" id="2_gu47s"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ieh3a"]
+bg_color = Color(0.28627452, 0.18431373, 0.43529412, 1)
+
 [sub_resource type="ButtonGroup" id="ButtonGroup_l8lb6"]
 allow_unpress = true
 
@@ -22,6 +25,7 @@ horizontal_alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1431031590]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ieh3a")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1524067691]
 layout_mode = 2
